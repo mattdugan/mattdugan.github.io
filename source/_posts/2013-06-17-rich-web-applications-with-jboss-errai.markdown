@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Rich Web Applications with JBoss Errai"
+title: "JUDCon 2013: Rich Web Applications with JBoss Errai"
 date: 2013-06-17 13:19
 comments: true
 categories: [JBoss, Errai, UI, GWT, JUDCon]
