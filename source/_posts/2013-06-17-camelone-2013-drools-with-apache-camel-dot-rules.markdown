@@ -52,7 +52,7 @@ of contraditions in the rule chain - for example a
 discount rule of 10% and a temporary discount of 20% are
 in conflict unless the contradiction can be managed to say
 that the 20% rate is valid over a particular time window
-and otherwise defailt to the 10% rule.  MultiCore processing
+and otherwise default to the 10% rule.  MultiCore processing
 additions in Drools 6 should provide a significant speedup
 in the next release of BRMS as well.
 
