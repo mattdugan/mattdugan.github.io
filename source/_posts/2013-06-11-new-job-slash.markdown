@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "New Job\!"
+title: "New Job"
 date: 2013-06-11 12:55
 comments: true
 categories: 
