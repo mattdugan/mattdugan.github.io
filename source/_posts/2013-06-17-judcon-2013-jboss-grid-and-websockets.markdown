@@ -45,8 +45,7 @@ RESTful WebSockets?_) and use only 2 bytes overhead per frame.
 JBoss Data Grid
 ---------------
 
-[JBoss Data
-Grid](https://www.redhat.com/products/jbossenterprisemiddleware/data-grid/)
+[JBoss Data Grid](https://www.redhat.com/products/jbossenterprisemiddleware/data-grid/)
 is essentially a caching framework which includes data replication
 and (re) distribution functionality.  This means that the sum of the 
 data included in a JBoss Data Grid cache is equivalent to the number
