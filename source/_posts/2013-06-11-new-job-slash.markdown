@@ -9,7 +9,7 @@ categories:
  - Shadow-Soft
 ---
 
-Leaving AT&T
+Leaving AT&amp;T
 ============
 
 About one month ago today, I realized that the time has come to move on.
