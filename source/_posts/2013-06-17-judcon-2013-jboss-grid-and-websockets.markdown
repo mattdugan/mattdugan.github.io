@@ -85,21 +85,21 @@ including HornetQ can enable the _de-duplication_ feature on a JMS
 Topic, resulting in an automatic purging of the duplicate cache
 events as they are published to the topic.  
 
-  WebSocket Clients ............   *
-             /|\
-              |   (WebSocket Protocol)
-             \|/
-  Application Message Driven Beans (@ServerEndpoint)
-             /|\
-              |   (JMS via Subscription)
-              |
-  HornetQ Topic Publisher
-    /|\     /|\    /|\
-     |       |      |   (Data Grid Cache Events)
-     |       |      |
-  JBoss Data Grid Layer
-     |    |    |    |
-    |X| .......... |X|  (Data Grid Nodes)
+    WebSocket Clients ............   *
+              /|\
+               |   (WebSocket Protocol)
+              \|/
+    Application Message Driven Beans (@ServerEndpoint)
+              /|\
+               |   (JMS via Subscription)
+               |
+    HornetQ Topic Publisher
+      /|\     /|\    /|\
+       |       |      |   (Data Grid Cache Events)
+       |       |      |
+    JBoss Data Grid Layer
+       |    |    |    |
+      |X| .......... |X|  (Data Grid Nodes)
 
 
 _(WWDC Update: New MacBook Air with Haswell and a new MacPro!)_
