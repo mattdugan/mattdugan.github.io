@@ -34,7 +34,7 @@ TicketMonster
 
 The focus of today's presentation (and others to follow) was the 
 [Ticket Monster](https://www.jboss.org/jdf/examples/ticket-monster/tutorial/WhatIsTicketMonster/)
-example application.  It made use of serveral technologies, including the
+example application.  It made use of several technologies, including the
 new JEE-6 specification for CDI to inject implementations of common application
 functionality into the business classes, [JBoss DataGrid](https://www.redhat.com/products/jbossenterprisemiddleware/data-grid/)
 as an application object cache and a choice of view layers.  The application
