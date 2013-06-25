@@ -59,7 +59,7 @@ Closing Thoughts
 ----------------
 
 It is a point of personal satisfaction to see so much work being done to 
-help developers learn and do in creative work, especially so since all of 
+help developers learn and do creative work, especially so since all of 
 the materials produced for the tutorials (and the application server itself)
 is open source and available to all.  Kudos to the JBoss team and RedHat for 
 not looking for a "line" between what is open and what is closed, but for
