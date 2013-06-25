@@ -48,7 +48,7 @@ simply not trying.
 Uniformity, particularly in the software space, can be applied to mean
 the mode in which your software or concepts are downloaded, consumed and
 how they interact with the participant.  Eric offers up his own template
-for doing so on GitHub, via the [JBoss Rock Star Template](https://www.github.com/aschabell/jboss-rock-star-template).
+for doing so on GitHub, via the [JBoss Rock Star Template](https://www.github.com/eschabell/jboss-rock-star-template).
 
 It is important that you create a template for your own projects as well,
 but stick to providing short and simple instructions for consuming it.  If
