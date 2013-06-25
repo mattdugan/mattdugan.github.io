@@ -21,7 +21,7 @@ projects.
 There are nearly 100 [JBoss Quickstarts](https://www.jboss.org/jdf/quickstarts/get-started/)
 to assist developers and architects alike with doing their own work or just
 getting familiar with the suite of JBoss projects available for use.  Most, if
-not all, all available from GitHub and can be initalized using a maven 
+not all, are available from GitHub and can be initalized using a maven 
 command or two.  Some quickstart projects are implemented more than once, with
 variation between the implementation technology.  This is another great 
 technique for learning just what difference does using 
