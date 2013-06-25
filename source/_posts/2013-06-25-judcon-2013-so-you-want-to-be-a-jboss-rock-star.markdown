@@ -74,4 +74,3 @@ Closing Thoughts
 If this all seems so simple, we have only to ask "Am I doing it yet?"  If not,
 why not, and is that a good reason.  I want to move forward.  Not everyone 
 does (which can be a good thing).  
-
