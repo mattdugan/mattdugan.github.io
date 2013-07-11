@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Cloud | Matt Dugan]]></title>
+  <link href="http://mattdugan.github.io/blog/categories/cloud/atom.xml" rel="self"/>
+  <link href="http://mattdugan.github.io/"/>
+  <updated>2013-07-11T17:26:36-04:00</updated>
+  <id>http://mattdugan.github.io/</id>
+  <author>
+    <name><![CDATA[Matt Dugan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Red Hat Summit 2013: Cloud Bursting with OpenShift]]></title>
+    <link href="http://mattdugan.github.io/blog/2013/07/11/red-hat-summit-2013-cloud-bursting-with-openshift/"/>
+    <updated>2013-07-11T16:57:00-04:00</updated>
+    <id>http://mattdugan.github.io/blog/2013/07/11/red-hat-summit-2013-cloud-bursting-with-openshift</id>
+    <content type="html"><![CDATA[<p>It&rsquo;s 8PM, do you know where your true geeks are?  Well, the room was packed
+for the Cloud Bursting with OpenShift birds of a feather session so the Red
+Hat Summit 2013 in Boston might not be a bad guess.</p>
+
+<p><a href="https://www.runcloudrun.com/">Grant Shipley</a> leads the session by
+<em>skipping</em> the &ldquo;Intro to OpenShift&rdquo; because 18 out of 20 people in the room
+are already diving in.  Awesome.  Grant runs his <em>blog</em> on
+<a href="http://www.openshift.com">OpenShift</a> making it one of the few that can
+elastically scale in response to load.</p>
+
+<h2>OpenShift</h2>
+
+<p>OpenShift is an ideal platform for deploying and hosting web applications
+because of its architecture.
+Supporting high deployment density is second nature and the ability to
+scale out (or in) <em>automatically</em> is just gravy.  When Grant&rsquo;s blog isn&rsquo;t
+taking any traffic, his OpenShift platform consumption is effectively
+zero.  But, under load, he could have hundreds of instances of the blog app
+pumped up on the OpenShift hosting servers, without having to touch
+anything or even worry about it.</p>
+
+<p>The public OpenShift actually runs on
+Amazon EWS, which was an intentional decision on the part of Red Hat at
+design and development time.  They wanted to create a platform which was
+inherently cloud scalable and deployable on local, hosted, and third party
+architecture.  Since OpenShift first went into public beta 2 years ago (at
+Red Hat Summit <em>2011</em>) there have been over a million applications created
+on the platform.  Now, Openshift is available for paid, enterprise services
+as well as self-hosted deployment.</p>
+
+<h2>Pricing</h2>
+
+<p>Hosting production applications on OpenShift is as easy as developing on
+OpenShift, but there is some cost involved.  However, the pricing model
+starts off very low because the architecture is capable of high vertical
+density.  To run an application using 3 <em>Gears</em> 24x7 (or 2,280 hours a
+month) is free.  What&rsquo;s a Gear?  A SQL database is a Gear, an application
+is a Gear, and any intermediary kind of platform is also a Gear.
+Considering common 3-tier architecture, you could say &ldquo;your first app is
+free, but the next one might cost you&rdquo;.  What a great excuse to get started.</p>
+
+<h2>Uses</h2>
+
+<p>As was publicly announced at the Red Hat Summit, Accenture is standardizing
+web deployment on OpenShift.  However, Accenture isn&rsquo;t the first.  Already
+Web PaaS providers are popping up, such as GetUp Cloud in Brazil.  I&rsquo;m sure
+I&rsquo;ll be entering the fray quite soon myself with
+<a href="http://www.shadow-soft.com">Shadow-Soft</a>.</p>
+
+<h2>Architecture</h2>
+
+<p>Not all containers are created equal.  OpenShift does advertise a container
+architecture, but it is important to note that &ldquo;container&rdquo;, in this case,
+is not a proper noun.  It does not refer to &ldquo;Linux Containers&rdquo;.  Instead,
+it is a classical (and clever) configuration of CPU Groups, SE Linux
+policies, and permissions which come together to provide <em>containment</em> to
+individual user and application tenants on the OpenShift hosting platform.
+When you install OpenShift yourself, you can use these techniques to say
+&ldquo;user &lsquo;x&rsquo; has a minimum of 30% memory and CPU before scaling starts&rdquo; and
+other such logical scaling boundaries.</p>
+
+<h2>Community</h2>
+
+<p>OpenShift is <em>very</em> active right now, primarily on IRC via the
+<code>#OPENSHIFT_DEV</code> channel on FreeNode.  Generally, members of the
+development team are always online somewhere in the world and a
+conversation is flowing between users and developers.  Try getting that
+with commercial proprietary software. :&ndash;)</p>
+
+<h2>Closing Thoughts</h2>
+
+<p>OpenShift is the most exciting thing Red Hat has going right now, in my
+opinion.  I am eager to work with it on premise.  The advantages it
+gives in deployment scalability for web applications (or, can you say, Web
+<em>APIs</em>?) is a blast from the past of hand tuned high performance web
+hosting services with all the benefits of modern application and user
+separatation and on-demand (on HTTP request) elastic scaling.</p>
+
+<p>Also, the <em>My app runs on OpenShift</em> track jacket I picked up for deploying
+on OpenShift live while at the Summit is sweeeeeeeeeeeeeeeet.</p>
+]]></content>
+  </entry>
+  
+</feed>

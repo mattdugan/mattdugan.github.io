@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: JBoss RedHat Summit AngularJS EAP | Matt Dugan]]></title>
-  <link href="http://mattdugan.github.io/blog/categories/jboss-redhat-summit-angularjs-eap/atom.xml" rel="self"/>
+  <title><![CDATA[Category: AngularJS | Matt Dugan]]></title>
+  <link href="http://mattdugan.github.io/blog/categories/angularjs/atom.xml" rel="self"/>
   <link href="http://mattdugan.github.io/"/>
-  <updated>2013-07-11T16:39:05-04:00</updated>
+  <updated>2013-07-11T17:26:36-04:00</updated>
   <id>http://mattdugan.github.io/</id>
   <author>
     <name><![CDATA[Matt Dugan]]></name>

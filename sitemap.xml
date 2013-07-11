@@ -58,15 +58,21 @@
     </url>
     <url>
         <loc>http://mattdugan.github.io/blog/2013/07/11/red-hat-summit-2013-the-jboss-way/</loc>
-        <lastmod>2013-07-11T16:38:42-04:00</lastmod>
+        <lastmod>2013-07-11T16:44:08-04:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://mattdugan.github.io/blog/2013/07/11/red-hat-summit-2013-cloud-bursting-with-openshift/
+        </loc>
+        <lastmod>2013-07-11T17:26:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://mattdugan.github.io/blog/archives/</loc>
-        <lastmod>2013-07-11T16:38:42-04:00</lastmod>
+        <lastmod>2013-07-11T17:26:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://mattdugan.github.io/</loc>
-        <lastmod>2013-07-11T16:38:42-04:00</lastmod>
+        <lastmod>2013-07-11T17:26:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://mattdugan.github.io/robots.txt</loc>
