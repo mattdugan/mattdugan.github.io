@@ -4,7 +4,7 @@
   <title><![CDATA[Matt Dugan]]></title>
   <link href="http://mattdugan.github.io/atom.xml" rel="self"/>
   <link href="http://mattdugan.github.io/"/>
-  <updated>2013-07-11T17:26:36-04:00</updated>
+  <updated>2013-07-11T17:33:35-04:00</updated>
   <id>http://mattdugan.github.io/</id>
   <author>
     <name><![CDATA[Matt Dugan]]></name>
@@ -47,6 +47,16 @@ architecture.  Since OpenShift first went into public beta 2 years ago (at
 Red Hat Summit <em>2011</em>) there have been over a million applications created
 on the platform.  Now, Openshift is available for paid, enterprise services
 as well as self-hosted deployment.</p>
+
+<p>For a demo, Grant showed the HA Proxy status page while performing a
+web-base load test on his OpenShift application.  You could see as the
+utilization reached a certain threshold that new instances were
+automatically provisioned and taking traffic.  A minute after the requests
+stopped coming in, or started coming in more slowly, extra instances were
+de-provisioned.  This use case is great for applications which peak and
+fall in terms of demand over time.  Even when the time scales are measured
+in terms of minutes, the OpenShift architecture helps you ensure that your servers
+are giving you their best, but only when necessary.</p>
 
 <h2>Pricing</h2>
 
