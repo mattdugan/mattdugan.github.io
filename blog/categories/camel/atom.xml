@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Camel | Matt Dugan]]></title>
+  <link href="http://mattdugan.github.io/blog/categories/camel/atom.xml" rel="self"/>
+  <link href="http://mattdugan.github.io/"/>
+  <updated>2013-07-11T15:10:36-04:00</updated>
+  <id>http://mattdugan.github.io/</id>
+  <author>
+    <name><![CDATA[Matt Dugan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[CamelOne 2013: Making Apache MQ Scale]]></title>
+    <link href="http://mattdugan.github.io/blog/2013/06/18/camelone-2013-making-apache-mq-scale/"/>
+    <updated>2013-06-18T08:43:00-04:00</updated>
+    <id>http://mattdugan.github.io/blog/2013/06/18/camelone-2013-making-apache-mq-scale</id>
+    <content type="html"><![CDATA[<p><a href="http://hiramchirino.com/blog">Hiram Chirino</a> is one of the authors of
+Apache MQ, so this should be good.</p>
+
+<p>Apache MQ is designed for Machine to Machine, push-style messaging and
+enables vertical scaling through high performance as well as
+horizontal scaling through clustering and partitioning.  Hiram gave
+a number of scaling tips for Apache MQ, which should mostly apply to
+<a href="https://www.redhat.com/products/jbossenterprisemiddleware/fuse/">JBoss Fuse</a>
+since Apache MQ is embedded.</p>
+
+<h2>Vertical Scaling</h2>
+
+<p>To start, vertical scaling, or allowing a single Apache MQ broker to
+serve more traffic than before, can be improved with a few parameters:</p>
+
+<ul>
+<li>Set the configuration for using a dedicated task runner to false.</li>
+<li>Set the destination policy setting for optimizing dispatch to true.</li>
+<li>Use the NIO transport on the broker</li>
+<li>Reduce the thread size on the JVM via the Xss option</li>
+</ul>
+
+
+<p>If using version 5.6 of Apache MQ, then non-blocking callbacks for
+ACK-ing receipt of JMS messages are available which can improve
+performance by incurring fewer thread waits.</p>
+
+<p>If using version 5.8, a new backing store is available, called
+<a href="https://github.com/fusesource/fuse-extra/tree/master/fusemq-leveldb">Level DB</a>
+instead of <a href="https://activemq.apache.org/kahadb.html">Kaha DB</a> which
+offers higher performance in nearly all cases.</p>
+
+<h2>Horizontal Scaling</h2>
+
+<p>Scaling <em>out</em> is usally a little more tricky than scaling <em>up</em>.  In
+Apache MQ, there are two primary methods for scaling out
+horizontally in your messaging architecture:</p>
+
+<ol>
+<li>Use client side partitioning by having multiple brokers, each
+for a set of clients.</li>
+<li>Link brokers together in a cluster configuration.</li>
+</ol>
+
+
+<p>The second method is the out of box &ldquo;easy button&rdquo;, but it is
+important to note that it does NOT make Apache MQ <em>faster</em>.  Instead,
+in some cases it is <em>slower</em> because it may add a network hop
+between brokers to reach a particular connected client path.</p>
+
+<p>The first method is more difficult to configure and maintain as
+clients scale out, so it is best used where the messaging topology
+matches with the broker partitioning scheme. This occurs when clients
+are naturally separated by geography or business purpose and
+producers <em>know</em> which client group should receive a particular
+message and can select the broker accordingly.</p>
+
+<h2>High Availability</h2>
+
+<p>Even with Horizontal Scaling practices, it is still possible to lose a
+broker and, particularly when using partioning, the associated set of
+clients.  This is where a High Availability configuration comes into
+play &ndash; to allow clients to continue receiving messages when their
+primary broker fails.</p>
+
+<p>HA configurations often use a failover URI type, written as
+<code>failover://(address1,address2,...)</code> but high availability can also
+be acheived by clustering at the database level (which is still a
+single point of failure, only now at the DB instead of the message
+broker).  Alternately shared filesystems can be used and, in the case
+of Apache MQ 5.9, a replicated Level DB using Zookeeper for automatic
+leader election.</p>
+
+<p>The <a href="https://zookeeper.apache.org/">Zookeeper</a> case is an interesting
+one, as it is also the officially supported tool embedded within
+<a href="http://fusesource.com/products/fuse-fabric/">Fuse Fabric</a> as the
+service registry.  When a fabric URI is used, the client can dynamically
+discover and resolve slave instances of brokers from the directory.</p>
+
+<p>It is important to consider the system load when using Zookeeper, as
+Zookeeper does not respond well in cases of CPU contention and this
+can impact leader election.  Keeping Zookeeper hosted separately from
+the Apache MQ broker helps with this, and you need at least 3 Zookeeper
+instances to achieve High Availability through Zookeeper, and at least
+5 to have high reliability.</p>
+
+<h2>Demo Time</h2>
+
+<p>Hiram made use of <a href="http://tmux.sourceforge.net/">Tmux</a> to automatically
+echo his commands across multiple terminals, live in front of the
+audience.  This speeds up the demo quite a bit, looks awesome, and
+lends credibility to him as a presenter for using a cool tool.</p>
+
+<p>The demo went well, showing brokers going down and the clients
+recovering without losing messages.</p>
+
+<h2>Closing Thoughts</h2>
+
+<p>A lot of features are new in the 5.9 version of Apache MQ, but won&rsquo;t
+make it into RedHat JBoss Fuse until early next year.<br/>
+RedHat JBoss Fuse sees Apache MQ as upstream code and takes some time
+to certify it for enterprise level support.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CamelOne 2013: Drools with Apache Camel.. Rules]]></title>
+    <link href="http://mattdugan.github.io/blog/2013/06/17/camelone-2013-drools-with-apache-camel-dot-rules/"/>
+    <updated>2013-06-17T14:32:00-04:00</updated>
+    <id>http://mattdugan.github.io/blog/2013/06/17/camelone-2013-drools-with-apache-camel-dot-rules</id>
+    <content type="html"><![CDATA[<p>Ah, the end of day Keynote, time to sit back and relax and
+enjoy some light presentation that doesn&rsquo;t require any
+brain power at all.</p>
+
+<p>&hellip; But it wasn&rsquo;t meant to be.  Mark Proctor was the presenter
+and when they guy talking to you looks like he can juggle
+a couple of Voltswagens, you had better listen.</p>
+
+<h2>jBPM, Drools, BRMS, what?</h2>
+
+<p>Coming from a background heavy in BPM, the confusion is
+natural and isn&rsquo;t exclusive to the decision maker, the
+implementer, or even the business user.  Each technology
+has certain merits and this session helped to clarify
+<a href="https://www.jboss.org/drools/">Drools</a>. Drools is not so
+much a &ldquo;Business Rule&rdquo; engine as it is a <em>Hybrid Reasoning
+Engine</em> supporting filters, logic, and chains.  Drools
+includes features for CEP (Complex Event Processing),
+Decision Tables for processing high numbers of rules and
+<em>Time Windowing</em> &ndash; a powerful feature allowing you to
+write logic for events that occur &ldquo;over the last 5 minutes&rdquo;
+or other relative time periods.</p>
+
+<p>Next, we looked at BRMS, which packages Drools and jBPM
+together along with a rule repository to achieve a very
+useful integration pattern.  Often, business users struggle
+with expressing a complete process (as opposed to merely
+a high-level process) in BPMN.  Eventually, the implementation
+starts to look like code, graphical or not.  Rules, on
+the other hand, <em>are</em> code but do not easily work upward
+to describe an overall business process.  Putting the
+two together is a peanut-butter-on-chocolate approach
+designed to achieve common code patterns using Rule
+logic while expressing the transitions between rule chains
+and processes using BPMN.  This concept works surprisingly
+well and I have to commend the RedHat BRMS team for
+thinking outside of the single-purpose tool package we see
+from other vendors.</p>
+
+<p>The upcoming release of BRMS embedding Drools 6 gains
+the ability of JBoss Truth Management to enable handling
+of contraditions in the rule chain &ndash; for example a
+discount rule of 10% and a temporary discount of 20% are
+in conflict unless the contradiction can be managed to say
+that the 20% rate is valid over a particular time window
+and otherwise default to the 10% rule.  MultiCore processing
+additions in Drools 6 should provide a significant speedup
+in the next release of BRMS as well.</p>
+
+<p>The Drools 6 UI gets a much needed refresh to fix some
+old nuances and adds resizable panels for getting work
+done within the browser viewport.  The new UI is brought
+together with Errai <em>(see earlier post)</em>.  Rule storage
+now has a GIT backend so rule authors can take advantage
+of the GIT workflow for publishing rules.  Finally, work
+has been performed to create a high availability scenario
+for the rules engine and everything is built together
+with maven.  Drools 6 introduces a new principal object
+extension point, KIE, for &ldquo;Knowledge is Everything&rdquo;.</p>
+
+<p>Mark closed out the presentation with a brief note on
+applying rules to situations you may not have thought of
+as a convenient answer.  Watch Mark write Pong, implemented
+in Drools.</p>
+
+<p><a href="https://www.youtube.com/watch?v=Omj4PR3v-nI">https://www.youtube.com/watch?v=Omj4PR3v-nI</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CamelOne 2013: Camel Cookbook]]></title>
+    <link href="http://mattdugan.github.io/blog/2013/06/17/camelone-2013-camel-cookbook/"/>
+    <updated>2013-06-17T09:11:00-04:00</updated>
+    <id>http://mattdugan.github.io/blog/2013/06/17/camelone-2013-camel-cookbook</id>
+    <content type="html"><![CDATA[<p>Unfortunately by the time my flight landed and I took the bus and
+two subways to the Hynes Convention Center in Boston, MA, got
+registered, issued a badge and had my bearings &mdash; the Camel
+Cookbook session was full and overflowing. Scott Cranton must
+be in top form.</p>
+
+<p>Oh well, great time for a coffee and a chance to familiarize
+myself with the conference session layout before camping out
+in front of the upcoming JUDCon session on JBoss Grid and
+WebSockets.</p>
+]]></content>
+  </entry>
+  
+</feed>

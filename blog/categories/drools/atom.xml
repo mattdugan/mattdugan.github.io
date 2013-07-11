@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Drools | Matt Dugan]]></title>
+  <link href="http://mattdugan.github.io/blog/categories/drools/atom.xml" rel="self"/>
+  <link href="http://mattdugan.github.io/"/>
+  <updated>2013-07-11T15:10:36-04:00</updated>
+  <id>http://mattdugan.github.io/</id>
+  <author>
+    <name><![CDATA[Matt Dugan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[CamelOne 2013: Drools with Apache Camel.. Rules]]></title>
+    <link href="http://mattdugan.github.io/blog/2013/06/17/camelone-2013-drools-with-apache-camel-dot-rules/"/>
+    <updated>2013-06-17T14:32:00-04:00</updated>
+    <id>http://mattdugan.github.io/blog/2013/06/17/camelone-2013-drools-with-apache-camel-dot-rules</id>
+    <content type="html"><![CDATA[<p>Ah, the end of day Keynote, time to sit back and relax and
+enjoy some light presentation that doesn&rsquo;t require any
+brain power at all.</p>
+
+<p>&hellip; But it wasn&rsquo;t meant to be.  Mark Proctor was the presenter
+and when they guy talking to you looks like he can juggle
+a couple of Voltswagens, you had better listen.</p>
+
+<h2>jBPM, Drools, BRMS, what?</h2>
+
+<p>Coming from a background heavy in BPM, the confusion is
+natural and isn&rsquo;t exclusive to the decision maker, the
+implementer, or even the business user.  Each technology
+has certain merits and this session helped to clarify
+<a href="https://www.jboss.org/drools/">Drools</a>. Drools is not so
+much a &ldquo;Business Rule&rdquo; engine as it is a <em>Hybrid Reasoning
+Engine</em> supporting filters, logic, and chains.  Drools
+includes features for CEP (Complex Event Processing),
+Decision Tables for processing high numbers of rules and
+<em>Time Windowing</em> &ndash; a powerful feature allowing you to
+write logic for events that occur &ldquo;over the last 5 minutes&rdquo;
+or other relative time periods.</p>
+
+<p>Next, we looked at BRMS, which packages Drools and jBPM
+together along with a rule repository to achieve a very
+useful integration pattern.  Often, business users struggle
+with expressing a complete process (as opposed to merely
+a high-level process) in BPMN.  Eventually, the implementation
+starts to look like code, graphical or not.  Rules, on
+the other hand, <em>are</em> code but do not easily work upward
+to describe an overall business process.  Putting the
+two together is a peanut-butter-on-chocolate approach
+designed to achieve common code patterns using Rule
+logic while expressing the transitions between rule chains
+and processes using BPMN.  This concept works surprisingly
+well and I have to commend the RedHat BRMS team for
+thinking outside of the single-purpose tool package we see
+from other vendors.</p>
+
+<p>The upcoming release of BRMS embedding Drools 6 gains
+the ability of JBoss Truth Management to enable handling
+of contraditions in the rule chain &ndash; for example a
+discount rule of 10% and a temporary discount of 20% are
+in conflict unless the contradiction can be managed to say
+that the 20% rate is valid over a particular time window
+and otherwise default to the 10% rule.  MultiCore processing
+additions in Drools 6 should provide a significant speedup
+in the next release of BRMS as well.</p>
+
+<p>The Drools 6 UI gets a much needed refresh to fix some
+old nuances and adds resizable panels for getting work
+done within the browser viewport.  The new UI is brought
+together with Errai <em>(see earlier post)</em>.  Rule storage
+now has a GIT backend so rule authors can take advantage
+of the GIT workflow for publishing rules.  Finally, work
+has been performed to create a high availability scenario
+for the rules engine and everything is built together
+with maven.  Drools 6 introduces a new principal object
+extension point, KIE, for &ldquo;Knowledge is Everything&rdquo;.</p>
+
+<p>Mark closed out the presentation with a brief note on
+applying rules to situations you may not have thought of
+as a convenient answer.  Watch Mark write Pong, implemented
+in Drools.</p>
+
+<p><a href="https://www.youtube.com/watch?v=Omj4PR3v-nI">https://www.youtube.com/watch?v=Omj4PR3v-nI</a></p>
+]]></content>
+  </entry>
+  
+</feed>
