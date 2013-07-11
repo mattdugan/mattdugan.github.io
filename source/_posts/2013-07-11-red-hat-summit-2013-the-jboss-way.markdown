@@ -3,7 +3,7 @@ layout: post
 title: "Red Hat Summit 2013: The JBoss Way"
 date: 2013-07-11 16:05
 comments: true
-categories: [JBoss RedHat Summit AngularJS EAP]
+categories: [JBoss, RedHat, Summit, AngularJS, EAP]
 ---
 
 Pete Muir was the presenter again, tailing off from his prior session on
