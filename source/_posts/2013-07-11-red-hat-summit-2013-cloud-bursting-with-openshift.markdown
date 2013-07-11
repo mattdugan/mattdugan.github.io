@@ -44,7 +44,7 @@ automatically provisioned and taking traffic.  A minute after the requests
 stopped coming in, or started coming in more slowly, extra instances were
 de-provisioned.  This use case is great for applications which peak and
 fall in terms of demand over time.  Even when the time scales are measured
-in minutes, the OpenShift architecture helps you ensure that your servers
+in terms of minutes, the OpenShift architecture helps you ensure that your servers
 are giving you their best, but only when necessary.
 
 Pricing
