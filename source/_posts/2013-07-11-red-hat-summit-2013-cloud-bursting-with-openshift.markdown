@@ -3,7 +3,7 @@ layout: post
 title: "Red Hat Summit 2013: Cloud Bursting with OpenShift"
 date: 2013-07-11 16:57
 comments: true
-categories: [Cloud, OpenShift]
+categories: [RedHat, Cloud, OpenShift]
 ---
 
 It's 8PM, do you know where your true geeks are?  Well, the room was packed
