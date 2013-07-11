@@ -9,9 +9,9 @@
   <meta name="author" content="Matt Dugan">
 
   
-  <meta name="description" content="This was the last session I attended prior to the start of the Summit
-keynotes. Presented by the Scotts (Cranton and McCarty), the session
-turned out &hellip;">
+  <meta name="description" content="Pete Muir was the presenter again, tailing off from his prior session on
+Building HTML5 Applications. This session should have some code examples
+and &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +67,100 @@ turned out &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/11/red-hat-summit-2013-the-jboss-way/">Red Hat Summit 2013: The JBoss Way</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-11T16:05:00-04:00" pubdate data-updated="true">Jul 11<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Pete Muir was the presenter again, tailing off from his prior session on
+<em>Building HTML5 Applications</em>.  This session should have some code examples
+and more insights.</p>
+
+<p>Diving into the code for the quickstarts, Pete makes a plug for
+<a href="http://www.angularjs.org/">AngularJS</a> and is clearly a big fan.  The
+<em>difference</em> with Angular JS is that it feels like using a tag library
+language rather than applying text base templates for substitution.  The
+negative point is that since AngularJS does not use <code>data-</code> attribute
+prefixes, each <code>ng-</code> attribute gets the red underline because it isn&rsquo;t
+following the HTML5 doctype.  Shame.</p>
+
+<p>Still, being able to see the same or similar quick starts represented with
+variations on the implementation choices is the next best thing to diving
+into a framework and trying to make something useful yourself.</p>
+
+<p>The <a href="https://www.jboss.org/jdf/quickstarts/get-started/">Quickstarts</a>
+source code is always available on <a href="https://github.com/jboss-jdf/%0Ajboss-as-quickstart">GitHub</a> and the individual pages for the quick start guides
+have comments enabled which the authors tend to respond to.  This
+communication is key since there are nearly 100 quick starts right now to
+absorb and make sense of.</p>
+
+<p>Code examples are presented using <a href="https://devstudio.jboss.com/download/6.x.html">JBoss Developer Studio</a>, the enterprise version of the
+JBoss IDE.  The examples are executing on <a href="http://www.redhat.com/products/jbossenterprisemiddleware/application-platform/">JBoss EAP 6</a>, the
+enterprise version of Wildfly (JBoss Application Server &ndash; Community Edition).</p>
+
+<p>The workflow of making code changes or developing a project that you want
+to deploy to your configured server from within the developer studio is
+simple: just drag and drop the application module onto the server
+configuration and it will deploy in the console.</p>
+
+<h2>JBoss Forge</h2>
+
+<p>Now the fun starts.  <a href="http://forge.jboss.org/">JBoss Forge</a> is a command
+line CLI which <em>interprets</em> commands to cause code to be generated in the
+project.  As I said before, this rapid prototyping feature from other
+dynamic language platforms is finally making its way into Java
+development.  Using TAB completion, Pete is able to quickly generate
+additional entity classes in the example project and wire them up with CDI.</p>
+
+<p>What immediately comes to mind is using Forge with a template script that
+accepts some parameters (or YAML) markup to substitute into the Forge
+script.  This could be a powerful way to quickstart applications of a
+particular character while leaving the important decisions up to the
+developer, while still ensuring that the generated application code matches
+up to local policies and code structure guidelines.</p>
+
+<p>Finally, using the JBoss Developer Studio, Pete <em>publishes</em> his application
+directly to his <a href="http://www.openshift.com">OpenShift</a> instance, showing how a
+developer can create and deploy an application onto the &ldquo;cloud&rdquo; that is
+more than just a simple static website, but a real JEE client server
+application.  What a use case!</p>
+
+<h2>Closing Thoughts</h2>
+
+<p>The JDF roadmap for 2013 should add quickstarts for JBoss Fuse, Switch
+Yard, JBPM and Drools.  Exciting times are ahead.  I wonder if having all
+this quickstart collateral will cause the JBoss development team to slow
+down the rate of change in the platform?  Naaah. :&ndash;)</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -437,143 +531,6 @@ parent class.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/18/camelone-2013-making-apache-mq-scale/">CamelOne 2013: Making Apache MQ Scale</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-18T08:43:00-04:00" pubdate data-updated="true">Jun 18<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://hiramchirino.com/blog">Hiram Chirino</a> is one of the authors of
-Apache MQ, so this should be good.</p>
-
-<p>Apache MQ is designed for Machine to Machine, push-style messaging and
-enables vertical scaling through high performance as well as
-horizontal scaling through clustering and partitioning.  Hiram gave
-a number of scaling tips for Apache MQ, which should mostly apply to
-<a href="https://www.redhat.com/products/jbossenterprisemiddleware/fuse/">JBoss Fuse</a>
-since Apache MQ is embedded.</p>
-
-<h2>Vertical Scaling</h2>
-
-<p>To start, vertical scaling, or allowing a single Apache MQ broker to
-serve more traffic than before, can be improved with a few parameters:</p>
-
-<ul>
-<li>Set the configuration for using a dedicated task runner to false.</li>
-<li>Set the destination policy setting for optimizing dispatch to true.</li>
-<li>Use the NIO transport on the broker</li>
-<li>Reduce the thread size on the JVM via the Xss option</li>
-</ul>
-
-
-<p>If using version 5.6 of Apache MQ, then non-blocking callbacks for
-ACK-ing receipt of JMS messages are available which can improve
-performance by incurring fewer thread waits.</p>
-
-<p>If using version 5.8, a new backing store is available, called
-<a href="https://github.com/fusesource/fuse-extra/tree/master/fusemq-leveldb">Level DB</a>
-instead of <a href="https://activemq.apache.org/kahadb.html">Kaha DB</a> which
-offers higher performance in nearly all cases.</p>
-
-<h2>Horizontal Scaling</h2>
-
-<p>Scaling <em>out</em> is usally a little more tricky than scaling <em>up</em>.  In
-Apache MQ, there are two primary methods for scaling out
-horizontally in your messaging architecture:</p>
-
-<ol>
-<li>Use client side partitioning by having multiple brokers, each
-for a set of clients.</li>
-<li>Link brokers together in a cluster configuration.</li>
-</ol>
-
-
-<p>The second method is the out of box &ldquo;easy button&rdquo;, but it is
-important to note that it does NOT make Apache MQ <em>faster</em>.  Instead,
-in some cases it is <em>slower</em> because it may add a network hop
-between brokers to reach a particular connected client path.</p>
-
-<p>The first method is more difficult to configure and maintain as
-clients scale out, so it is best used where the messaging topology
-matches with the broker partitioning scheme. This occurs when clients
-are naturally separated by geography or business purpose and
-producers <em>know</em> which client group should receive a particular
-message and can select the broker accordingly.</p>
-
-<h2>High Availability</h2>
-
-<p>Even with Horizontal Scaling practices, it is still possible to lose a
-broker and, particularly when using partioning, the associated set of
-clients.  This is where a High Availability configuration comes into
-play &ndash; to allow clients to continue receiving messages when their
-primary broker fails.</p>
-
-<p>HA configurations often use a failover URI type, written as
-<code>failover://(address1,address2,...)</code> but high availability can also
-be acheived by clustering at the database level (which is still a
-single point of failure, only now at the DB instead of the message
-broker).  Alternately shared filesystems can be used and, in the case
-of Apache MQ 5.9, a replicated Level DB using Zookeeper for automatic
-leader election.</p>
-
-<p>The <a href="https://zookeeper.apache.org/">Zookeeper</a> case is an interesting
-one, as it is also the officially supported tool embedded within
-<a href="http://fusesource.com/products/fuse-fabric/">Fuse Fabric</a> as the
-service registry.  When a fabric URI is used, the client can dynamically
-discover and resolve slave instances of brokers from the directory.</p>
-
-<p>It is important to consider the system load when using Zookeeper, as
-Zookeeper does not respond well in cases of CPU contention and this
-can impact leader election.  Keeping Zookeeper hosted separately from
-the Apache MQ broker helps with this, and you need at least 3 Zookeeper
-instances to achieve High Availability through Zookeeper, and at least
-5 to have high reliability.</p>
-
-<h2>Demo Time</h2>
-
-<p>Hiram made use of <a href="http://tmux.sourceforge.net/">Tmux</a> to automatically
-echo his commands across multiple terminals, live in front of the
-audience.  This speeds up the demo quite a bit, looks awesome, and
-lends credibility to him as a presenter for using a cool tool.</p>
-
-<p>The demo went well, showing brokers going down and the clients
-recovering without losing messages.</p>
-
-<h2>Closing Thoughts</h2>
-
-<p>A lot of features are new in the 5.9 version of Apache MQ, but won&rsquo;t
-make it into RedHat JBoss Fuse until early next year.<br/>
-RedHat JBoss Fuse sees Apache MQ as upstream code and takes some time
-to certify it for enterprise level support.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -587,6 +544,10 @@ to certify it for enterprise level support.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/11/red-hat-summit-2013-the-jboss-way/">Red Hat Summit 2013: The JBoss Way</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/07/11/judcon-2013-resilient-enterprise-messaging-with-fuse-and-red-hat-enterprise-linux/">JUDCon 2013: Resilient Enterprise Messaging With Fuse &amp; Red Hat Enterprise Linux</a>
