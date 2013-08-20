@@ -38,3 +38,8 @@ Open Source development is about recognizing the temptation to mask imperfection
 Decision point - buy Open Source and leverage your Open Source vendor.
 -----------------------------------------------------------------------
 When you choose Open Source software for your business you are making an balanced investment.  You are investing in the community of developers by adding your own energy to finding defects and contributing enhancements and customizations.  You are investing in your vendor by contributing funds to enhance the quality of the software according to your real usage of it - so the software improves in its ability to meet the needs of your organization over time.  Finally, you are investing in yourself.  By bringing Open Source software to your business, you are enabling your team to inspect and integrate custom solutions at the deepest levels of the software while still being able to take advantage of contributed solutions and knowledge brought into the Open Source community.
+
+
+Want to know more?
+------------------
+Shadow-Soft is sponsoring this year's [All Things Open](http://www.allthingsopen.org/) conference this year in Raleigh, North Carolina.  I'll be giving a talk about Open Source in your business along with other top tier Open Source industry representatives.  If Open Source development, business or culture interests you, please do come out and visit us at our booth and come meet me and my fellow Shadow-Soft colleagues.
