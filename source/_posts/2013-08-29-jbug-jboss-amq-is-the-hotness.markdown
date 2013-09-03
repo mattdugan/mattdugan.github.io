@@ -30,7 +30,7 @@ However, differentiating features do not stop there.  Some of the best features 
 
 * Composite destinations (instead of having to implement multiple listeners with identical implementations)
 
-* Exclusive consumers (instead of having to implement logic or physical architecture to affect the sticky nature of a message recipient)
+* Exclusive consumers (instead of having to implement logical or physical architecture to affect the sticky nature of a message recipient)
 
 * Message groups (instead of having to implement both logical and physical architecture to manage message load and exclusivity simultaneously)
 
