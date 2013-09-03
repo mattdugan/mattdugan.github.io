@@ -6,7 +6,7 @@ comments: true
 categories: [RedHat, A-MQ, JBoss, Open Source, Apache, Active MQ]
 ---
 
-Just before Labor Day weekend, Hiram Chirino came down to our Atlanta JBoss Users Group.  We had a large local turnout interested to know more about JBoss AM-Q and the features coming from Apache Active MQ upstream.  An accomplished engineer, Hiram is employed by Red Hat but is also an Apache member and ActiveMQ PMC chair.  Between committing to Apache ActiveMQ, Camel, Karaf, ServiceMix, Felix and Aries, Hiram leads the development of the STOMP 1.1 specification.  All those things in mind, it was our pleasure at Shadow-Soft to continue our tradition of hosting the recurring Atlanta JBUG meetup with a presenter that knows what he is talking about.
+Just before Labor Day weekend, Hiram Chirino came down to our Atlanta JBoss Users Group.  We had a large local turnout interested to know more about JBoss A-MQ and the features coming from Apache Active MQ upstream.  An accomplished engineer, Hiram is employed by Red Hat but is also an Apache member and ActiveMQ PMC chair.  Between committing to Apache ActiveMQ, Camel, Karaf, ServiceMix, Felix and Aries, Hiram leads the development of the STOMP 1.1 specification.  All those things in mind, it was our pleasure at Shadow-Soft to continue our tradition of hosting the recurring Atlanta JBUG meetup with a presenter that knows what he is talking about.
 
 
 Messaging Oriented Middleware
