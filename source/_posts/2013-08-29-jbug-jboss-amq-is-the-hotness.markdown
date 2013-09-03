@@ -12,7 +12,7 @@ Just before Labor Day weekend, Hiram Chirino came down to our Atlanta JBoss User
 Messaging Oriented Middleware
 ============================
 
-JBoss AMQ is an example of Messaging oriented Middleware (or MoM), which essentially means that JBoss A-MQ offers messaging APIs and facilities to deliver messages between message producers and message consumers in a variety of ways.  Hiram began by describing components in messaging, such as producers, consumers, topics, queues, destinations and selectors.  Using nicely animated slides to visually represent message delivery, Hiram conveyed the principle concepts of messaging that represent the baseline of functionality achieved by A-MQ prior to providing additional best in class level features.
+JBoss A-MQ is an example of Messaging oriented Middleware (or MoM), which essentially means that JBoss A-MQ offers messaging APIs and facilities to deliver messages between message producers and message consumers in a variety of ways.  Hiram began by describing components in messaging, such as producers, consumers, topics, queues, destinations and selectors.  Using nicely animated slides to visually represent message delivery, Hiram conveyed the principle concepts of messaging that represent the baseline of functionality achieved by A-MQ prior to providing additional best in class level features.
 
 
 Features
