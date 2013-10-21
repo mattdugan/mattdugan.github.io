@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Just a blog.</title><link>/</link><description>by Matt Dugan</description><atom:link href="/feeds/events.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 30 Aug 2013 14:30:00 -0400</lastBuildDate><item><title>Atlanta JBUG: JBoss A-MQ is the hotness</title><link>/posts/2013/Aug/30/atl-jbug-jboss-amq-is-the-hotness</link><description>&lt;p&gt;Just before Labor Day weekend, Hiram Chirino came down to our Atlanta JBoss Users Group.  We had a large local turnout interested to know more about JBoss A-&lt;span class="caps"&gt;MQ&lt;/span&gt; and the features coming from Apache Active &lt;span class="caps"&gt;MQ&lt;/span&gt; upstream.  An accomplished engineer, Hiram is employed by Red Hat but is also an Apache member and ActiveMQ &lt;span class="caps"&gt;PMC&lt;/span&gt; chair.  Between committing to Apache ActiveMQ, Camel, Karaf, ServiceMix, Felix and Aries, Hiram leads the development of the &lt;span class="caps"&gt;STOMP&lt;/span&gt; 1.1 specification.  All those things in mind, it was our pleasure at Shadow-Soft to continue our tradition of hosting the recurring Atlanta &lt;span class="caps"&gt;JBUG&lt;/span&gt; meetup with a presenter that knows what he is talking&amp;nbsp;about.&lt;/p&gt;
+&lt;h1&gt;Messaging Oriented&amp;nbsp;Middleware&lt;/h1&gt;
+&lt;p&gt;JBoss A-&lt;span class="caps"&gt;MQ&lt;/span&gt; is an example of Messaging oriented Middleware (or MoM), which
+essentially means that JBoss A-&lt;span class="caps"&gt;MQ&lt;/span&gt; offers messaging APIs and facilities to
+deliver messages between message producers and message consumers in a variety
+of ways.  Hiram began by describing components in messaging, such as producers,
+consumers, topics, queues, destinations and selectors.  Using nicely animated
+slides to visually represent message delivery, Hiram conveyed the principle
+concepts of messaging that represent the baseline of functionality achieved by
+A-&lt;span class="caps"&gt;MQ&lt;/span&gt; prior to providing additional best in class level&amp;nbsp;features.&lt;/p&gt;
+&lt;h1&gt;Features&lt;/h1&gt;
+&lt;p&gt;One differentiating factor of A-&lt;span class="caps"&gt;MQ&lt;/span&gt; is that it works hard to make messaging a
+commodity between different implementation languages, physical architectures
+and runtime environments.  For example, A-&lt;span class="caps"&gt;MQ&lt;/span&gt; supports multiple messaging
+protocols (itself converting to and from OpenWire internally) appropriate to a
+variety of use cases.  As well, A-&lt;span class="caps"&gt;MQ&lt;/span&gt; can be deployed embedded in another
+application, to a Web application server, to a &lt;span class="caps"&gt;JEE&lt;/span&gt; server, standalone or within
+a highly available message broker cluster.  The deployment flexibility,
+interoperability and multi-protocol support of A-&lt;span class="caps"&gt;MQ&lt;/span&gt; make it an ideal solution
+for supporting Smart Grids of large numbers of embedded and mobile&amp;nbsp;devices.&lt;/p&gt;
+&lt;h1&gt;Even More&amp;nbsp;Features&lt;/h1&gt;
+&lt;p&gt;However, differentiating features do not stop there.  Some of the best features
+of A-&lt;span class="caps"&gt;MQ&lt;/span&gt; come right out of the wish list of engineers implementing messaging
+driven solutions.  These&amp;nbsp;include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Wildcard destinations (instead of having to implement non-interrupting
+  listeners with their own logic to determine if a message is of interest
+  or using overly generic destination&amp;nbsp;names)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Composite destinations (instead of having to implement multiple listeners
+  with identical&amp;nbsp;implementations)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Exclusive consumers (instead of having to implement logical or physical
+  architecture to affect the sticky nature of a message&amp;nbsp;recipient)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Message groups (instead of having to implement both logical and physical
+  architecture to manage message load and exclusivity&amp;nbsp;simultaneously)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In any deployment strategy, A-&lt;span class="caps"&gt;MQ&lt;/span&gt; operates as a message broker, offering logic
+and functionality to accept messages from a variety of protocols in a variety
+of technologies and apply the necessary steps to reliably store and/or transmit
+those messages to a suitable destination.  However, the architecture of an A-&lt;span class="caps"&gt;MQ&lt;/span&gt;
+deployment is not limited to single-point; brokers can be networked together
+for the benefit of high availability, firewall traversal, store &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; forward
+function, and a global messaging namespace.  Particularly in corporate
+networks messaging to or from satellite locations, the ability to traverse
+firewalls and create a bi-directional connection to a known source or
+destination is a powerful&amp;nbsp;feature.&lt;/p&gt;
+&lt;h1&gt;Demo&amp;nbsp;Time&lt;/h1&gt;
+&lt;p&gt;As A-&lt;span class="caps"&gt;MQ&lt;/span&gt; absorbs features from Apache ActiveMQ, Hiram walked us through a major
+upcoming feature: LevelDB support.  Level &lt;span class="caps"&gt;DB&lt;/span&gt;, and replicated Level &lt;span class="caps"&gt;DB&lt;/span&gt; support,
+stands to increase the base level of stored message performance by more than
+100% over Kaha &lt;span class="caps"&gt;DB&lt;/span&gt; - the current default message&amp;nbsp;store.&lt;/p&gt;
+&lt;p&gt;Finally, Hiram used Zookeeper, Active &lt;span class="caps"&gt;MQ&lt;/span&gt; and Level &lt;span class="caps"&gt;DB&lt;/span&gt; to demonstrate message
+replication, high availability broker configuration and both producer and
+consumer recovery scenarios when those processes experienced unexpected
+termination&amp;nbsp;events.&lt;/p&gt;
+&lt;h1&gt;Join&amp;nbsp;Us&lt;/h1&gt;
+&lt;p&gt;Shadow-Soft is proud to continue hosting knowledge rich sessions in the Atlanta
+&lt;span class="caps"&gt;JBUG&lt;/span&gt; meetup.  We hope you will spend an evening with us for some knowledge
+sharing, personal networking and enlightening perspectives on Open Source
+developments in the JBoss&amp;nbsp;universe.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Matt Dugan</dc:creator><pubDate>Fri, 30 Aug 2013 14:30:00 -0400</pubDate><guid>tag:,2013-08-30:posts/2013/Aug/30/atl-jbug-jboss-amq-is-the-hotness</guid><category>RedHat</category><category>A-MQ</category><category>JBoss</category><category>Open Source</category><category>Apache</category><category>Active MQ</category></item></channel></rss>

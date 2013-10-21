@@ -1,0 +1,290 @@
+
+<!DOCTYPE HTML>
+<!--
+	Dopetrope 2.0 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+			<title>Just a blog.</title>
+			<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+			<meta charset="utf-8" />
+			<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Just a blog. Full Atom Feed" />
+			<link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Just a blog. Full RSS Feed" />
+			<link href="/feeds/conferences.atom.xml" type="application/atom+xml" rel="alternate" title="Just a blog. Categories Atom Feed" />
+			<link href="/feeds/conferences.rss.xml" type="application/rss+xml" rel="alternate" title="Just a blog. Categories RSS Feed" />
+			<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,300italic" rel="stylesheet" />
+				<link rel="stylesheet" href="/theme/css/pygment.css" />
+			<noscript>
+				<link rel="stylesheet" href="/theme/css/skel-noscript.css" />
+				<link rel="stylesheet" href="/theme/css/style.css" />
+				<link rel="stylesheet" href="/theme/css/style-desktop.css" />
+			</noscript>
+	</head>
+	<body class="no-sidebar">
+		<!-- Header Wrapper -->
+			<div id="header-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="12u">
+						
+							<!-- Header -->
+								<section id="header">
+									
+									<!-- Logo -->
+									<h1><a href="/">Just a blog.</a></h1>
+									
+									<!-- Nav -->
+										<nav id="nav">
+											<ul>
+															<li class="active"><a href="/category/conferences.html">Conferences</a></li>
+															<li><a href="/category/dwd.html">DwD</a></li>
+															<li><a href="/category/events.html">Events</a></li>
+															<li><a href="/category/life.html">Life</a></li>
+															<li><a href="/category/thoughts.html">Thoughts</a></li>
+											</ul>
+										</nav>
+
+								</section>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		<!-- Main Wrapper -->
+			<div id="main-wrapper">
+				<div class="container">
+<div class="row">
+	<div class="12u">
+			<section>
+				<div>
+					<div class="row">
+						<div class="12u skel-cell-mainContent">
+							<!-- Content -->
+								<article class="box is-post">
+									<div class="image image-full"><img src="/"/><a href="" class="img-copy"></a></div>
+									<div class="post-infos">
+										<ul class="tags">
+											<li><a class="button" href="category/conferences.html">Conferences</a></li>
+												<li><a class="button button-alt" href="tag/redhat.html">Redhat</a></li>
+
+												<li><a class="button button-alt" href="tag/cloud.html">Cloud</a></li>
+
+												<li><a class="button button-alt" href="tag/openshift.html">Openshift</a></li>
+
+										</ul>
+									</div>
+
+									<div class="pennant pennant-alt date">2013-07-11</div>
+									<h2>Red Hat Summit 2013: Cloud Bursting with&nbsp;OpenShift</h2>
+									<p>It&#8217;s <span class="caps">8PM</span>, do you know where your true geeks are?  Well, the room was packed
+for the Cloud Bursting with OpenShift birds of a feather session so the Red
+Hat Summit 2013 in Boston might not be a bad&nbsp;guess.</p>
+<p><a href="https://www.runcloudrun.com/">Grant Shipley</a> leads the session by
+<em>skipping</em> the &#8220;Intro to OpenShift&#8221; because 18 out of 20 people in the room
+are already diving in.  Awesome.  Grant runs his <em>blog</em> on
+<a href="http://www.openshift.com">OpenShift</a> making it one of the few that can
+elastically scale in response to&nbsp;load.</p>
+<h1>OpenShift</h1>
+<p>OpenShift is an ideal platform for deploying and hosting web applications
+because of its architecture.
+Supporting high deployment density is second nature and the ability to
+scale out (or in) <em>automatically</em> is just gravy.  When Grant&#8217;s blog isn&#8217;t
+taking any traffic, his OpenShift platform consumption is effectively
+zero.  But, under load, he could have hundreds of instances of the blog app
+pumped up on the OpenShift hosting servers, without having to touch
+anything or even worry about&nbsp;it.</p>
+<p>The public OpenShift actually runs on
+Amazon <span class="caps">EC2</span>, which was an intentional decision on the part of Red Hat at
+design and development time.  They wanted to create a platform which was
+inherently cloud scalable and deployable on local, hosted, and third party
+architecture.  Since OpenShift first went into public beta 2 years ago (at
+Red Hat Summit <em>2011</em>) there have been over a million applications created
+on the platform.  Now, Openshift is available for paid, enterprise services
+as well as self-hosted&nbsp;deployment.</p>
+<p>For a demo, Grant showed the <span class="caps">HA</span> Proxy status page while performing a
+web-base load test on his OpenShift application.  You could see as the
+utilization reached a certain threshold that new instances were
+automatically provisioned and taking traffic.  A minute after the requests
+stopped coming in, or started coming in more slowly, extra instances were
+de-provisioned.  This use case is great for applications which peak and
+fall in terms of demand over time.  Even when the time scales are measured
+in terms of minutes, the OpenShift architecture helps you ensure that your servers
+are giving you their best, but only when&nbsp;necessary.</p>
+<h1>Pricing</h1>
+<p>Hosting production applications on OpenShift is as easy as developing on
+OpenShift, but there is some cost involved.  However, the pricing model
+starts off very low because the architecture is capable of high vertical
+density.  To run an application using 3 <em>Gears</em> 24x7 (or 2,280 hours a
+month) is free.  What&#8217;s a Gear?  A <span class="caps">SQL</span> database is a Gear, an application
+is a Gear, and any intermediary kind of platform is also a Gear.
+Considering common 3-tier architecture, you could say &#8220;your first app is
+free, but the next one might cost you&#8221;.  What a great excuse to get&nbsp;started.</p>
+<h1>Uses</h1>
+<p>As was publicly announced at the Red Hat Summit, Accenture is standardizing
+web deployment on OpenShift.  However, Accenture isn&#8217;t the first.  Already
+Web PaaS providers are popping up, such as GetUp Cloud in Brazil.  I&#8217;m sure
+I&#8217;ll be entering the fray quite soon myself with
+<a href="http://www.shadow-soft.com">Shadow-Soft</a>.</p>
+<h1>Architecture</h1>
+<p>Not all containers are created equal.  OpenShift does advertise a container
+architecture, but it is important to note that &#8220;container&#8221;, in this case,
+is not a proper noun.  It does not refer to &#8220;Linux Containers&#8221;.  Instead,
+it is a classical (and clever) configuration of <span class="caps">CPU</span> Groups, <span class="caps">SE</span> Linux
+policies, and permissions which come together to provide <em>containment</em> to
+individual user and application tenants on the OpenShift hosting platform.
+When you install OpenShift yourself, you can use these techniques to say
+&#8220;user &#8216;x&#8217; has a minimum of 30% memory and <span class="caps">CPU</span> before scaling starts&#8221; and
+other such logical scaling&nbsp;boundaries.</p>
+<h1>Community</h1>
+<p>OpenShift is <em>very</em> active right now, primarily on <span class="caps">IRC</span> via the
+<code>#OPENSHIFT_DEV</code> channel on FreeNode.  Generally, members of the
+development team are always online somewhere in the world and a
+conversation is flowing between users and developers.  Try getting that
+with commercial proprietary software.&nbsp;:-)</p>
+<h1>Closing&nbsp;Thoughts</h1>
+<p>OpenShift is the most exciting thing Red Hat has going right now, in my
+opinion.  I am eager to work with it on premise.  The advantages it
+gives in deployment scalability for web applications (or, can you say, Web
+<em>APIs</em>?) is a blast from the past of hand tuned high performance web
+hosting services with all the benefits of modern application and user
+separatation and on-demand (on <span class="caps">HTTP</span> request) elastic&nbsp;scaling.</p>
+<p>Also, the <em>My app runs on OpenShift</em> track jacket I picked up for deploying
+on OpenShift live while at the Summit is&nbsp;sweeeeeeeeeeeeeeeet.</p>
+								</article>
+						</div>
+					</div>
+				</div>
+			</section>
+	</div>
+</div>
+
+				</div>
+			</div>
+
+		<!-- Footer Wrapper -->
+			<div id="footer-wrapper">
+				<!-- Footer -->
+					<section id="footer" class="container">
+						<div class="row">
+							<div class="8u">
+								<section>
+									<header>
+										<h2>Latest articles</h2>
+									</header>
+									<ul class="dates">
+										<li>
+											<span class="date">Oct <strong>18</strong></span>
+											<h3><a href="posts/2013/Oct/18/using-redhat-software-collections">DwD E-001: Using Red Hat Software&nbsp;Collections</a></h3>
+											<p><p>Use Red Hat Software Collections for modern application development.</p></p>
+										</li>
+										<li>
+											<span class="date">Aug <strong>30</strong></span>
+											<h3><a href="posts/2013/Aug/30/atl-jbug-jboss-amq-is-the-hotness">Atlanta <span class="caps">JBUG</span>: JBoss A-<span class="caps">MQ</span> is the&nbsp;hotness</a></h3>
+											<p><p>Atlanta JBUG session summary on using JBoss AMQ</p></p>
+										</li>
+										<li>
+											<span class="date">Aug <strong>20</strong></span>
+											<h3><a href="posts/2013/Aug/20/the-importance-of-choosing-open-source">The Importance of Choosing Open&nbsp;Source</a></h3>
+											<p><p>Business requires software, but not all software is created equal.  Open Source software is the best choice for business.</p></p>
+										</li>
+										<li>
+											<span class="date">Jul <strong>11</strong></span>
+											<h3><a href="posts/2013/Jul/11/rhsummit-2013-cloud-bursting-with-openshift">Red Hat Summit 2013: Cloud Bursting with&nbsp;OpenShift</a></h3>
+											<p><p>Red Hat Summit 2013 talk summary on using OpenShift for developing cloud applications at scale.</p></p>
+										</li>
+									</ul>
+								</section>
+							</div>
+								<div class="4u">
+									<section>
+										<header>
+											<h2>What's this all about?</h2>
+										</header>
+											<a href="http://mattdugan.github.io" class="image image-full"><img src="/images/profile_photo2.png" alt="" /></a>
+										<p>
+										
+    <b>Matt Dugan</b>:<br/>
+    Lead Middleware and Cloud Architect<br/>
+    Technology Evangelist
+    
+										</p>
+										<footer>
+												<a href="http://mattdugan.github.io" class="button">Find out more</a>
+										</footer>
+									</section>
+								</div>
+						</div>
+						<div class="row">
+							<div class="4u">
+								<section>
+									<header>
+										<h2>Blogroll</h2>
+									</header>
+									<ul class="divided">
+											<li><a href="http://www.shadow-soft.com/blog">My Corporate Blog at Shadow-Soft</a></li>
+											<li><a href="http://www.meetup.com/ATL-JBUG/">Atlanta JBoss Users Group</a></li>
+											<li><a href="http://planet.fedoraproject.org">Planet Fedora Project</a></li>
+											<li><a href="http://www.usevim.com">Use Vim!</a></li>
+											<li><a href="https://news.ycombinator.com">Hacker News</a></li>
+											<li><a href="http://www.reddit.com/r/linux/">Reddit r/Linux</a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="4u">
+								<section>
+									<header>
+										<h2>Categories</h2>
+									</header>
+									<ul class="divided">
+											<li><a href="/category/conferences.html">Conferences</a></li>
+											<li><a href="/category/dwd.html">DwD</a></li>
+											<li><a href="/category/events.html">Events</a></li>
+											<li><a href="/category/life.html">Life</a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="4u">
+							
+								<section>
+									<header>
+										<h2>Contact</h2>
+									</header>
+									<ul class="social">
+											<li class="twitter"><a href="http://twitter.com/dugansvoice" class="icon48 icon48-2">Twitter</a></li>
+										<li class="linkedin"><a href="http://www.linkedin.com/pub/../in/mattdugan" class="icon48 icon48-4">LinkedIn</a></li>
+											<li class="googleplus"><a href="https://plus.google.com/113099432515471915221" class="icon48 icon48-6">Google+</a></li>
+									</ul>
+									<ul class="contact">
+											<li>
+												<h3>Mail</h3>
+												<p><a href="mailto:matt@intelligentgeek.com">matt@intelligentgeek.com</a></p>
+											</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<!-- Copyright -->
+									<div id="copyright">
+										<ul class="links">
+											<li>&copy; Matt Dugan	</li>
+											<li>Images: <a href="http://facebook.com/DreametryDoodle">Dreametry Doodle</a> + <a href="http://iconify.it">Iconify.it</a></li>
+											<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										</ul>
+									</div>
+							</div>
+						</div>
+					</section>
+			</div>
+		<script src="/theme/js/jquery.min.js"></script>
+		<script src="/theme/js/jquery.dropotron.js"></script>
+		<script src="/theme/js/config.js"></script>
+		<script src="/theme/js/skel.min.js"></script>
+		<script src="/theme/js/skel-panels.min.js"></script>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="/theme/css/ie8.css" /><![endif]-->
+	</body>
+</html>
