@@ -25,18 +25,15 @@ up and used, live:
 Deep with Dugan, Episode 1:
 ===========================
 
-<!--[if IE]>
 <object id='dwdE01' classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' 
-        width='746px' height='480px'>
+        width='1004' height='644' type='application/x-shockwave-flash'
+        data='/content/dwd/DwD_Episode_001_RHSCL.swf'>
   <param name='movie' value='/content/dwd/DwD_Episode_001_RHSCL.swf'/>
-<![endif]-->
-<!--[if !IE]>-->
-  <object id='mySWF' type='application/x-shockwave-flash' 
-          data='/content/dwd/DwD_Episode_001_RHSCL.swf' 
-          width='746px' height='480px'>
-<!--<![endif]-->
+  <param name='scale' value='showAll'/>
   <param name='allowfullscreen' value='true'/>
-  <p>This page requires Adobe Flash Player</p>
+  <embed src='/content/dwd/DwD_Episode_001_RHSCL.swf'
+         pluginspage='http://get.adobe.com/flashplayer/' 
+         width='1004' height='644' scale="showAll"/>
 </object> 
 
 
