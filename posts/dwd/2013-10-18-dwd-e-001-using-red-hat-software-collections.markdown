@@ -25,9 +25,11 @@ up and used, live:
 Deep with Dugan, Episode 1:
 ===========================
 
-<object width="640" height="480" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">
-  <param name="src" value="assets/DwD_Episode_001_RHSCL.swf" />
-  <embed width="640" height="480" type="application/x-shockwave-flash" src="assets/DwD_Episode_001_RHSCL.swf" />
+<object width="746" height="480" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">
+  <param name="movie" value="/content/dwd/DwD_Episode_001_RHSCL.swf" />
+  <param name="scale" value="showall" />
+  <param name="allowFullScreen" value="true" />
+  <embed width="746" height="480" type="application/x-shockwave-flash" src="/content/dwd/DwD_Episode_001_RHSCL.swf" />
 </object>
 
  
