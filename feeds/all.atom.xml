@@ -11,9 +11,11 @@ languages and tools they are accustomed to using.  For example, Python 3, &lt;sp
 &lt;p&gt;Watch the video below to learn more, and see Red Hat Software Collections set
 up and used,&amp;nbsp;live:&lt;/p&gt;
 &lt;h1&gt;Deep with Dugan, Episode&amp;nbsp;1:&lt;/h1&gt;
-&lt;p&gt;&lt;object width="640" height="480" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"&gt;
-  &lt;param name="src" value="/content/dwd/DwD_Episode_001_RHSCL.swf" /&gt;
-  &lt;embed width="640" height="480" type="application/x-shockwave-flash" src="/content/dwd/DwD_Episode_001_RHSCL.swf" /&gt;
+&lt;p&gt;&lt;object width="746" height="480" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"&gt;
+  &lt;param name="movie" value="/content/dwd/DwD_Episode_001_RHSCL.swf" /&gt;
+  &lt;param name="scale" value="showall" /&gt;
+  &lt;param name="allowFullScreen" value="true" /&gt;
+  &lt;embed width="746" height="480" type="application/x-shockwave-flash" src="/content/dwd/DwD_Episode_001_RHSCL.swf" /&gt;
 &lt;/object&gt;&lt;/p&gt;
 &lt;p&gt;If you enjoyed the above, stay tuned for more Deep with Dugan special&amp;nbsp;episodes!&lt;/p&gt;
 &lt;p&gt;Also, don’t forget, we are live this week at the All Things Open conference
