@@ -25,14 +25,21 @@ up and used, live:
 Deep with Dugan, Episode 1:
 ===========================
 
-<object width="746" height="480" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">
-  <param name="movie" value="/content/dwd/DwD_Episode_001_RHSCL.swf" />
-  <param name="scale" value="showall" />
-  <param name="allowFullScreen" value="true" />
-  <embed width="746" height="480" type="application/x-shockwave-flash" src="/content/dwd/DwD_Episode_001_RHSCL.swf" />
-</object>
+<!--[if IE]>
+<object id='dwdE01' classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' 
+        width='746px' height='480px'>
+  <param name='movie' value='/content/dwd/DwD_Episode_001_RHSCL.swf'/>
+<![endif]-->
+<!--[if !IE]>-->
+  <object id='mySWF' type='application/x-shockwave-flash' 
+          data='/content/dwd/DwD_Episode_001_RHSCL.swf' 
+          width='746px' height='480px'>
+<!--<![endif]-->
+  <param name='allowfullscreen' value='true'/>
+  <p>This page requires Adobe Flash Player</p>
+</object> 
 
- 
+
 If you enjoyed the above, stay tuned for more Deep with Dugan special episodes!
  
 Also, don’t forget, we are live this week at the All Things Open conference
