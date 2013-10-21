@@ -11,20 +11,15 @@ languages and tools they are accustomed to using.  For example, Python 3, &lt;sp
 &lt;p&gt;Watch the video below to learn more, and see Red Hat Software Collections set
 up and used,&amp;nbsp;live:&lt;/p&gt;
 &lt;h1&gt;Deep with Dugan, Episode&amp;nbsp;1:&lt;/h1&gt;
-&lt;!--[if IE]&gt;
-&lt;object id='dwdE01' classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' 
-        width='746px' height='480px'&gt;
+&lt;p&gt;&lt;object id='dwdE01' classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' 
+        width='1004' height='644' type='application/x-shockwave-flash'
+        data='/content/dwd/DwD_Episode_001_RHSCL.swf'&gt;
   &lt;param name='movie' value='/content/dwd/DwD_Episode_001_RHSCL.swf'/&gt;
-&lt;![endif]--&gt;
-
-&lt;!--[if !IE]&gt;&amp;#8212;&gt;
-
-&lt;p&gt;&lt;object id='mySWF' type='application/x-shockwave-flash' 
-          data='/content/dwd/DwD_Episode_001_RHSCL.swf' 
-          width='746px' height='480px'&gt;
-&lt;!--&lt;![endif]--&gt;
+  &lt;param name='scale' value='showAll'/&gt;
   &lt;param name='allowfullscreen' value='true'/&gt;
-  &lt;p&gt;This page requires Adobe Flash&amp;nbsp;Player&lt;/p&gt;
+  &lt;embed src='/content/dwd/DwD_Episode_001_RHSCL.swf'
+         pluginspage='http://get.adobe.com/flashplayer/' 
+         width='1004' height='644' scale="showAll"/&gt;
 &lt;/object&gt; &lt;/p&gt;
 &lt;p&gt;If you enjoyed the above, stay tuned for more Deep with Dugan special&amp;nbsp;episodes!&lt;/p&gt;
 &lt;p&gt;Also, don’t forget, we are live this week at the All Things Open conference
