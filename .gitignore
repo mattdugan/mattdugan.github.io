@@ -4,6 +4,9 @@
 .sass-cache
 .gist-cache
 .pygments-cache
+*.un~
+*.swp
+*.pyc
 _deploy
 public
 sass.old

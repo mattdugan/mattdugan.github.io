@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Just a blog.</title><link>/</link><description>by Matt Dugan</description><atom:link href="/feeds/conferences.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 11 Jul 2013 16:57:00 -0400</lastBuildDate><item><title>Red Hat Summit 2013: Cloud Bursting with OpenShift</title><link>/posts/2013/Jul/11/rhsummit-2013-cloud-bursting-with-openshift</link><description>&lt;p&gt;It&amp;#8217;s &lt;span class="caps"&gt;8PM&lt;/span&gt;, do you know where your true geeks are?  Well, the room was packed
+for the Cloud Bursting with OpenShift birds of a feather session so the Red
+Hat Summit 2013 in Boston might not be a bad&amp;nbsp;guess.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.runcloudrun.com/"&gt;Grant Shipley&lt;/a&gt; leads the session by
+&lt;em&gt;skipping&lt;/em&gt; the &amp;#8220;Intro to OpenShift&amp;#8221; because 18 out of 20 people in the room
+are already diving in.  Awesome.  Grant runs his &lt;em&gt;blog&lt;/em&gt; on
+&lt;a href="http://www.openshift.com"&gt;OpenShift&lt;/a&gt; making it one of the few that can
+elastically scale in response to&amp;nbsp;load.&lt;/p&gt;
+&lt;h1&gt;OpenShift&lt;/h1&gt;
+&lt;p&gt;OpenShift is an ideal platform for deploying and hosting web applications
+because of its architecture.
+Supporting high deployment density is second nature and the ability to
+scale out (or in) &lt;em&gt;automatically&lt;/em&gt; is just gravy.  When Grant&amp;#8217;s blog isn&amp;#8217;t
+taking any traffic, his OpenShift platform consumption is effectively
+zero.  But, under load, he could have hundreds of instances of the blog app
+pumped up on the OpenShift hosting servers, without having to touch
+anything or even worry about&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;The public OpenShift actually runs on
+Amazon &lt;span class="caps"&gt;EC2&lt;/span&gt;, which was an intentional decision on the part of Red Hat at
+design and development time.  They wanted to create a platform which was
+inherently cloud scalable and deployable on local, hosted, and third party
+architecture.  Since OpenShift first went into public beta 2 years ago (at
+Red Hat Summit &lt;em&gt;2011&lt;/em&gt;) there have been over a million applications created
+on the platform.  Now, Openshift is available for paid, enterprise services
+as well as self-hosted&amp;nbsp;deployment.&lt;/p&gt;
+&lt;p&gt;For a demo, Grant showed the &lt;span class="caps"&gt;HA&lt;/span&gt; Proxy status page while performing a
+web-base load test on his OpenShift application.  You could see as the
+utilization reached a certain threshold that new instances were
+automatically provisioned and taking traffic.  A minute after the requests
+stopped coming in, or started coming in more slowly, extra instances were
+de-provisioned.  This use case is great for applications which peak and
+fall in terms of demand over time.  Even when the time scales are measured
+in terms of minutes, the OpenShift architecture helps you ensure that your servers
+are giving you their best, but only when&amp;nbsp;necessary.&lt;/p&gt;
+&lt;h1&gt;Pricing&lt;/h1&gt;
+&lt;p&gt;Hosting production applications on OpenShift is as easy as developing on
+OpenShift, but there is some cost involved.  However, the pricing model
+starts off very low because the architecture is capable of high vertical
+density.  To run an application using 3 &lt;em&gt;Gears&lt;/em&gt; 24x7 (or 2,280 hours a
+month) is free.  What&amp;#8217;s a Gear?  A &lt;span class="caps"&gt;SQL&lt;/span&gt; database is a Gear, an application
+is a Gear, and any intermediary kind of platform is also a Gear.
+Considering common 3-tier architecture, you could say &amp;#8220;your first app is
+free, but the next one might cost you&amp;#8221;.  What a great excuse to get&amp;nbsp;started.&lt;/p&gt;
+&lt;h1&gt;Uses&lt;/h1&gt;
+&lt;p&gt;As was publicly announced at the Red Hat Summit, Accenture is standardizing
+web deployment on OpenShift.  However, Accenture isn&amp;#8217;t the first.  Already
+Web PaaS providers are popping up, such as GetUp Cloud in Brazil.  I&amp;#8217;m sure
+I&amp;#8217;ll be entering the fray quite soon myself with
+&lt;a href="http://www.shadow-soft.com"&gt;Shadow-Soft&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Architecture&lt;/h1&gt;
+&lt;p&gt;Not all containers are created equal.  OpenShift does advertise a container
+architecture, but it is important to note that &amp;#8220;container&amp;#8221;, in this case,
+is not a proper noun.  It does not refer to &amp;#8220;Linux Containers&amp;#8221;.  Instead,
+it is a classical (and clever) configuration of &lt;span class="caps"&gt;CPU&lt;/span&gt; Groups, &lt;span class="caps"&gt;SE&lt;/span&gt; Linux
+policies, and permissions which come together to provide &lt;em&gt;containment&lt;/em&gt; to
+individual user and application tenants on the OpenShift hosting platform.
+When you install OpenShift yourself, you can use these techniques to say
+&amp;#8220;user &amp;#8216;x&amp;#8217; has a minimum of 30% memory and &lt;span class="caps"&gt;CPU&lt;/span&gt; before scaling starts&amp;#8221; and
+other such logical scaling&amp;nbsp;boundaries.&lt;/p&gt;
+&lt;h1&gt;Community&lt;/h1&gt;
+&lt;p&gt;OpenShift is &lt;em&gt;very&lt;/em&gt; active right now, primarily on &lt;span class="caps"&gt;IRC&lt;/span&gt; via the
+&lt;code&gt;#OPENSHIFT_DEV&lt;/code&gt; channel on FreeNode.  Generally, members of the
+development team are always online somewhere in the world and a
+conversation is flowing between users and developers.  Try getting that
+with commercial proprietary software.&amp;nbsp;:-)&lt;/p&gt;
+&lt;h1&gt;Closing&amp;nbsp;Thoughts&lt;/h1&gt;
+&lt;p&gt;OpenShift is the most exciting thing Red Hat has going right now, in my
+opinion.  I am eager to work with it on premise.  The advantages it
+gives in deployment scalability for web applications (or, can you say, Web
+&lt;em&gt;APIs&lt;/em&gt;?) is a blast from the past of hand tuned high performance web
+hosting services with all the benefits of modern application and user
+separatation and on-demand (on &lt;span class="caps"&gt;HTTP&lt;/span&gt; request) elastic&amp;nbsp;scaling.&lt;/p&gt;
+&lt;p&gt;Also, the &lt;em&gt;My app runs on OpenShift&lt;/em&gt; track jacket I picked up for deploying
+on OpenShift live while at the Summit is&amp;nbsp;sweeeeeeeeeeeeeeeet.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Matt Dugan</dc:creator><pubDate>Thu, 11 Jul 2013 16:57:00 -0400</pubDate><guid>tag:,2013-07-11:posts/2013/Jul/11/rhsummit-2013-cloud-bursting-with-openshift</guid><category>RedHat</category><category>Cloud</category><category>OpenShift</category></item><item><title>Red Hat Summit 2013: The JBoss Way</title><link>/posts/2013/Jul/11/rhsummit-2013-the-jboss-way</link><description>&lt;p&gt;Pete Muir was the presenter again, tailing off from his prior session on
+&lt;em&gt;Building &lt;span class="caps"&gt;HTML5&lt;/span&gt; Applications&lt;/em&gt;.  This session should have some code examples
+and more&amp;nbsp;insights.&lt;/p&gt;
+&lt;p&gt;Diving into the code for the quickstarts, Pete makes a plug for
+&lt;a href="http://www.angularjs.org/"&gt;AngularJS&lt;/a&gt; and is clearly a big fan.  The
+&lt;em&gt;difference&lt;/em&gt; with Angular &lt;span class="caps"&gt;JS&lt;/span&gt; is that it feels like using a tag library
+language rather than applying text base templates for substitution.  The
+negative point is that since AngularJS does not use &lt;code&gt;data-&lt;/code&gt; attribute
+prefixes, each &lt;code&gt;ng-&lt;/code&gt; attribute gets the red underline because it isn&amp;#8217;t
+following the &lt;span class="caps"&gt;HTML5&lt;/span&gt; doctype.&amp;nbsp;Shame.&lt;/p&gt;
+&lt;p&gt;Still, being able to see the same or similar quick starts represented with
+variations on the implementation choices is the next best thing to diving
+into a framework and trying to make something useful&amp;nbsp;yourself.&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://www.jboss.org/jdf/quickstarts/get-started/"&gt;Quickstarts&lt;/a&gt;
+source code is always available on &lt;a href="https://github.com/jboss-jdf/
+jboss-as-quickstart"&gt;GitHub&lt;/a&gt; and the individual pages for the quick start guides
+have comments enabled which the authors tend to respond to.  This
+communication is key since there are nearly 100 quick starts right now to
+absorb and make sense&amp;nbsp;of.&lt;/p&gt;
+&lt;p&gt;Code examples are presented using &lt;a href="https://devstudio.jboss.com/download/6.x.html"&gt;JBoss Developer Studio&lt;/a&gt;, the enterprise version of the
+JBoss &lt;span class="caps"&gt;IDE&lt;/span&gt;.  The examples are executing on &lt;a href="http://www.redhat.com/products/jbossenterprisemiddleware/application-platform/"&gt;JBoss &lt;span class="caps"&gt;EAP&lt;/span&gt; 6&lt;/a&gt;, the
+enterprise version of Wildfly (JBoss Application Server - Community&amp;nbsp;Edition).&lt;/p&gt;
+&lt;p&gt;The workflow of making code changes or developing a project that you want
+to deploy to your configured server from within the developer studio is
+simple: just drag and drop the application module onto the server
+configuration and it will deploy in the&amp;nbsp;console.&lt;/p&gt;
+&lt;h1&gt;JBoss&amp;nbsp;Forge&lt;/h1&gt;
+&lt;p&gt;Now the fun starts.  &lt;a href="http://forge.jboss.org/"&gt;JBoss Forge&lt;/a&gt; is a command
+line &lt;span class="caps"&gt;CLI&lt;/span&gt; which &lt;em&gt;interprets&lt;/em&gt; commands to cause code to be generated in the
+project.  As I said before, this rapid prototyping feature from other
+dynamic language platforms is finally making its way into Java
+development.  Using &lt;span class="caps"&gt;TAB&lt;/span&gt; completion, Pete is able to quickly generate
+additional entity classes in the example project and wire them up with&amp;nbsp;&lt;span class="caps"&gt;CDI&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;What immediately comes to mind is using Forge with a template script that
+accepts some parameters (or &lt;span class="caps"&gt;YAML&lt;/span&gt;) markup to substitute into the Forge
+script.  This could be a powerful way to quickstart applications of a
+particular character while leaving the important decisions up to the
+developer, while still ensuring that the generated application code matches
+up to local policies and code structure&amp;nbsp;guidelines.&lt;/p&gt;
+&lt;p&gt;Finally, using the JBoss Developer Studio, Pete &lt;em&gt;publishes&lt;/em&gt; his application
+directly to his &lt;a href="http://www.openshift.com"&gt;OpenShift&lt;/a&gt; instance, showing how a
+developer can create and deploy an application onto the &amp;#8220;cloud&amp;#8221; that is
+more than just a simple static website, but a real &lt;span class="caps"&gt;JEE&lt;/span&gt; client server
+application.  What a use&amp;nbsp;case!&lt;/p&gt;
+&lt;h1&gt;Closing&amp;nbsp;Thoughts&lt;/h1&gt;
+&lt;p&gt;The &lt;span class="caps"&gt;JDF&lt;/span&gt; roadmap for 2013 should add quickstarts for JBoss Fuse, Switch
+Yard, &lt;span class="caps"&gt;JBPM&lt;/span&gt; and Drools.  Exciting times are ahead.  I wonder if having all
+this quickstart collateral will cause the JBoss development team to slow
+down the rate of change in the platform?  Naaah.&amp;nbsp;:-)&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Matt Dugan</dc:creator><pubDate>Thu, 11 Jul 2013 16:05:00 -0400</pubDate><guid>tag:,2013-07-11:posts/2013/Jul/11/rhsummit-2013-the-jboss-way</guid><category>JBoss</category><category>RedHat</category><category>Summit</category><category>AngularJS</category><category>EAP</category></item><item><title>JUDCon 2013: Resilient Enterprise Messaging with Fuse &amp; Red Hat Enterprise Linux</title><link>/posts/2013/Jul/11/judcon-2013-resilient-enterprise-messaging-with-fuse-and-rhel</link><description>&lt;p&gt;This was the last session I attended prior to the start of the Summit
+keynotes.  Presented by the Scotts (Cranton and McCarty), the session
+turned out to be the very-high-level companion to Hiram&amp;#8217;s &amp;#8216;Making Apache
+Active &lt;span class="caps"&gt;MQ&lt;/span&gt; Scale&amp;#8217; session.  Unfortunately, this session wasn&amp;#8217;t nearly as
+deep as it could have&amp;nbsp;been.&lt;/p&gt;
+&lt;p&gt;Presented from a laptop &lt;em&gt;covered&lt;/em&gt; in stickers (but at least it was running
+&lt;span class="caps"&gt;RHEL&lt;/span&gt;!), the session focused on the high level feature capabilities of
+&lt;a href="https://www.jboss.org/products/fuse"&gt;JBoss &lt;span class="caps"&gt;FUSE&lt;/span&gt;&lt;/a&gt; and&amp;nbsp;A-&lt;span class="caps"&gt;MQ&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.jboss.org/jbossamq"&gt;JBoss A-&lt;span class="caps"&gt;MQ&lt;/span&gt;&lt;/a&gt; is the enterprise certified
+and supported release of Apache Active &lt;span class="caps"&gt;MQ&lt;/span&gt;, with multiple protocol and
+language support.  &lt;span class="caps"&gt;FUSE&lt;/span&gt; embeds Active &lt;span class="caps"&gt;MQ&lt;/span&gt; into Karaf using &lt;a href="http://fusesource.com/products/fuse-fabric/"&gt;&lt;span class="caps"&gt;FUSE&lt;/span&gt; Fabric&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Some of the added features or benefits&amp;nbsp;are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The ability to use one backing store per broker, but with separation to
+  avoid blocking at the I/O&amp;nbsp;controller&lt;/li&gt;
+&lt;li&gt;An operations managed cluster instead of product level clustering using
+  the Red Hat Cluster&amp;nbsp;Suite&lt;/li&gt;
+&lt;li&gt;N+1 or N+2 architecture for highly available message brokers instead of
+  2N or more (like active/passive)&amp;nbsp;configurations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The good news is that since everything is open source, we can dig into the
+&lt;a href="http://github.com/jboss-fuse"&gt;code&lt;/a&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Matt Dugan</dc:creator><pubDate>Thu, 11 Jul 2013 14:12:00 -0400</pubDate><guid>tag:,2013-07-11:posts/2013/Jul/11/judcon-2013-resilient-enterprise-messaging-with-fuse-and-rhel</guid><category>JUDCon</category><category>Fuse</category><category>A-MQ</category></item><item><title>JUDCon 2013: So you want to be a JBoss Rock Star</title><link>/posts/2013/Jun/25/judcon-2013-so-you-want-to-be-a-jboss-rock-star</link><description>&lt;p&gt;Eric Schabell gave an emphatic &lt;em&gt;rah rah&lt;/em&gt; presentation to encourage everyone
+in attendance (not as many as you might think) to become actively involved
+in speaking roles about technology, developer process, or really anything
+they are passionate about.  This sounds kind of ho-hum and obvious, but it
+is true advice for taking a career to the next step by becoming known for
+&lt;em&gt;who&lt;/em&gt; you are as well as well as &lt;em&gt;what&lt;/em&gt; you do.  This notion was an 
+important one in my decision to make a career change and come work for
+&lt;a href="http://www.shadow-soft.com"&gt;Shadow Soft&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Knowledge, Passion and&amp;nbsp;Tools&lt;/h1&gt;
+&lt;p&gt;The three tenants to your growth process are knowledge about what you
+do (or what you want to be known for doing), the passion to do it and do 
+it well, and the tools you need in order to be successful in communicating
+it to the world (or your desired audience, but why aim&amp;nbsp;low?)&lt;/p&gt;
+&lt;p&gt;To exercise your personal growth, Eric recommends a simple three step&amp;nbsp;plan:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Choose your story you want to tell, or the project you want to be known&amp;nbsp;through.&lt;/li&gt;
+&lt;li&gt;Practice uniformity (more on this&amp;nbsp;later)&lt;/li&gt;
+&lt;li&gt;Integrate it with &lt;em&gt;the Cloud&lt;/em&gt;, or, differently phrased, make your
+   work discoverable and consumable by others via an established (and 
+   popular)&amp;nbsp;mechanism.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If you are a developer or want to show things in the technology space, 
+practice making the &lt;em&gt;evidence&lt;/em&gt; of your work public, mobile ready and
+available through a common asset that your audience will have at their
+disposal.  Generally, this can be summarized as &amp;#8220;Put it on the&amp;nbsp;web.&amp;#8221;&lt;/p&gt;
+&lt;p&gt;Choosing your story or project is the first step because, as those of us
+who have or work with children often offer as advice, it isn&amp;#8217;t enough to 
+want to be &amp;#8220;rich&amp;#8221; or &amp;#8220;famous&amp;#8221; or &amp;#8220;popular&amp;#8221;.  You have to answer the question 
+of &lt;em&gt;what&lt;/em&gt; it is that made you rich or famous or popular.  Remember, people
+can be well known for their spectacular failures just as well as they
+can be known for spectacular success.  However, no one is known for 
+simply not&amp;nbsp;trying.&lt;/p&gt;
+&lt;p&gt;Uniformity, particularly in the software space, can be applied to mean
+the mode in which your software or concepts are downloaded, consumed and
+how they interact with the participant.  Eric offers up his own template
+for doing so on GitHub, via the &lt;a href="https://www.github.com/eschabell/jboss-rock-star-template"&gt;JBoss Rock Star Template&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It is important that you create a template for your own projects as well,
+but stick to providing short and simple instructions for consuming it.  If
+space is not prohibitive, include &lt;em&gt;everything&lt;/em&gt; someone needs to get going
+all in the same place.&amp;nbsp;Consider:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How will the participant retrieve my&amp;nbsp;project?&lt;/li&gt;
+&lt;li&gt;How will they install&amp;nbsp;it?&lt;/li&gt;
+&lt;li&gt;How will they run&amp;nbsp;it?&lt;/li&gt;
+&lt;li&gt;How long do they want to spend on&amp;nbsp;it?&lt;/li&gt;
+&lt;li&gt;Where can they look for&amp;nbsp;help?&lt;/li&gt;
+&lt;li&gt;What is the perception I want them to&amp;nbsp;have?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Answering these questions might lead you to select a uniform installation
+script, a public hosting provider like GitHub for your open source projects,
+a cloud hosting provider like &lt;a href="http://www.openshift.com"&gt;OpenShift&lt;/a&gt;, a
+initialization script and corresponding local/remote deployment script, and
+a &lt;span class="caps"&gt;README&lt;/span&gt; file in the root of your&amp;nbsp;project.&lt;/p&gt;
+&lt;h1&gt;Closing&amp;nbsp;Thoughts&lt;/h1&gt;
+&lt;p&gt;If this all seems so simple, we have only to ask &amp;#8220;Am I doing it yet?&amp;#8221;  If not,
+why not, and is that a good reason.  I want to move forward.  Not everyone 
+does (which can be a good&amp;nbsp;thing).  &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Matt Dugan</dc:creator><pubDate>Tue, 25 Jun 2013 16:23:00 -0400</pubDate><guid>tag:,2013-06-25:posts/2013/Jun/25/judcon-2013-so-you-want-to-be-a-jboss-rock-star</guid><category>Technology</category><category>Career</category><category>Activism</category></item><item><title>JUDCon 2013: Building HTML5 Applications</title><link>/posts/2013/Jun/25/judcon-2013-building-html5-applications</link><description>&lt;p&gt;&lt;a href="http://www.jboss.org"&gt;JBoss&lt;/a&gt; has been doing a lot of work (and a lot of 
+writing) about their quick starts to application development on the JBoss
+stack.  This is a &lt;em&gt;good thing&lt;/em&gt;&amp;nbsp;as..&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;All the code is open&amp;nbsp;source&lt;/li&gt;
+&lt;li&gt;JBoss has a huge number of projects and it can be difficult to make
+    sense of them all without good&amp;nbsp;examples.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Pete Muir (who could walk into any high school undetected) is 
+a superb presenter and is an active participant in the JBoss quickstart&amp;nbsp;projects.&lt;/p&gt;
+&lt;p&gt;There are nearly 100 &lt;a href="https://www.jboss.org/jdf/quickstarts/get-started/"&gt;JBoss Quickstarts&lt;/a&gt;
+to assist developers and architects alike with doing their own work or just
+getting familiar with the suite of JBoss projects available for use.  Most, if
+not all, are available from GitHub and can be initalized using a maven 
+command or two.  Some quickstart projects are implemented more than once, with
+variation between the implementation technology.  This is another great 
+technique for learning just what difference does using 
+&lt;a href="http://angularjs.org/"&gt;Angular &lt;span class="caps"&gt;JS&lt;/span&gt;&lt;/a&gt; vs &lt;a href="https://www.jboss.org/errai"&gt;JBoss Errai&lt;/a&gt; 
+or &lt;a href="https://www.jboss.org/richfaces"&gt;RichFaces &lt;span class="caps"&gt;JSF&lt;/span&gt;&lt;/a&gt; make for an application 
+(for&amp;nbsp;example).&lt;/p&gt;
+&lt;h1&gt;TicketMonster&lt;/h1&gt;
+&lt;p&gt;The focus of today&amp;#8217;s presentation (and others to follow) was the 
+&lt;a href="https://www.jboss.org/jdf/examples/ticket-monster/tutorial/WhatIsTicketMonster/"&gt;Ticket Monster&lt;/a&gt;
+example application.  It made use of several technologies, including the
+new &lt;span class="caps"&gt;JEE&lt;/span&gt;-6 specification for &lt;span class="caps"&gt;CDI&lt;/span&gt; to inject implementations of common application
+functionality into the business classes, &lt;a href="https://www.redhat.com/products/jbossenterprisemiddleware/data-grid/"&gt;JBoss DataGrid&lt;/a&gt;
+as an application object cache and a choice of view layers.  The application
+is written in such a way as to have a different &lt;span class="caps"&gt;UI&lt;/span&gt; for both desktop and 
+mobile view clients while maintaining a consistent service &lt;span class="caps"&gt;API&lt;/span&gt; on the JBoss
+application&amp;nbsp;server.  &lt;/p&gt;
+&lt;p&gt;As a shortcut for developing management &lt;span class="caps"&gt;UI&lt;/span&gt; capability for the various domain
+objects in Ticket Monster, &lt;a href="http://forge.jboss.org/"&gt;JBoss Forge&lt;/a&gt; was used
+to generate the administration pages as scaffolds on top of the entity objects
+for the Admin function.  This is a feature that has been around in Ruby and
+Python domains for quite some time, and it is very good to see the scaffold
+development utility appear in the Java&amp;nbsp;space.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.jboss.org/errai"&gt;JBoss Errai&lt;/a&gt; is used to provide a live data
+binding between the &lt;span class="caps"&gt;UI&lt;/span&gt; and the server side of the application, which, via
+Errai, automatically upgrades the connection to a WebSockets interleaved
+stream when supported by both the browser and server.  Using &lt;span class="caps"&gt;CDI&lt;/span&gt; and events,
+the communication between the client and server is highly&amp;nbsp;interactive.&lt;/p&gt;
+&lt;h1&gt;Closing&amp;nbsp;Thoughts&lt;/h1&gt;
+&lt;p&gt;It is a point of personal satisfaction to see so much work being done to 
+help developers learn and do creative work, especially so since all of 
+the materials produced for the tutorials (and the application server itself)
+is open source and available to all.  Kudos to the JBoss team and RedHat for 
+not looking for a &amp;#8220;line&amp;#8221; between what is open and what is closed, but for
+being all open, all the&amp;nbsp;time.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Matt Dugan</dc:creator><pubDate>Tue, 25 Jun 2013 15:20:00 -0400</pubDate><guid>tag:,2013-06-25:posts/2013/Jun/25/judcon-2013-building-html5-applications</guid><category>JUDCon</category><category>HTML5</category><category>JBoss</category><category>Forge</category><category>Errai</category></item><item><title>JUDCon 2013: Full Control &amp; Transparency</title><link>/posts/2013/Jun/25/judcon-2013-full-control-and-transparency</link><description>&lt;p&gt;Josh West and Andrew Dinn gave a well informed talk on various code and
+runtime inspection tools in the JBoss toolbox.  First up was 
+&lt;a href="https://www.jboss.org/tattletale"&gt;JBoss Tattletale&lt;/a&gt;, used to inspect and
+capture metadata for applications.  Tattletale creates an inventory of
+all the libraries in and application and allows you to easily find which 
+jar is containing a class you have reason to be concerned with.  Ask anyone
+who has tried to use the various online &amp;#8220;jar finder&amp;#8221; kinds of services and
+they will tell you that being able to see a specific, context relevant 
+listing is a secret sauce.  Personally, I&amp;#8217;m glad to find a tool that allows
+me to finally throw away my quick and dirty scripts combining find, unzip and
+grep to look for class locations.  Tattletale creates and easy to search and
+read report in &lt;span class="caps"&gt;HTML&lt;/span&gt; and can be invoked within your continous integration
+build tool of choice so that reports are always at the&amp;nbsp;ready.  &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://windup.jboss.org/index.html"&gt;JBoss Windup&lt;/a&gt;, a tool I am personally
+excited about to assist with inventory of applications deployed to Oracle or
+&lt;span class="caps"&gt;IBM&lt;/span&gt; application servers produces output from Tattletale as one of its&amp;nbsp;artifacts.&lt;/p&gt;
+&lt;h1&gt;Decompiling&lt;/h1&gt;
+&lt;p&gt;Next, we looked briefly at decompilation options for code that you either
+didn&amp;#8217;t write or don&amp;#8217;t own or (Heaven forbid) don&amp;#8217;t have the source code for
+any longer.  &lt;a href="http://java.decompiler.free.fr/?q=jdgui"&gt;&lt;span class="caps"&gt;JD&lt;/span&gt;-&lt;span class="caps"&gt;GUI&lt;/span&gt;&lt;/a&gt; seems to be
+the best of the readily available options, but itself is not open source. Of
+course, that leaves you to wonder the obvious question of when you might need
+to decompile the decompiler.  There is an open source &lt;span class="caps"&gt;JAVA&lt;/span&gt; decompiler in the
+works, called &lt;a href="https://github.com/bradsdavis/candle-decompiler"&gt;Candle&lt;/a&gt; by
+Brad Davis, the author of Cake, the tool behind&amp;nbsp;Windup.&lt;/p&gt;
+&lt;h1&gt;Bytecode&amp;nbsp;Magic&lt;/h1&gt;
+&lt;p&gt;This section could just as easily have been called &lt;em&gt;Black Magic&lt;/em&gt;.  Bytecode
+injection is a technique that not many leverage because it is simultaneously
+powerful and tough to get right if you don&amp;#8217;t know exactly what you are&amp;nbsp;doing.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.jboss.org/byteman"&gt;Byteman&lt;/a&gt; gives you the capability to inject
+code at &lt;em&gt;&lt;span class="caps"&gt;RUNTIME&lt;/span&gt;&lt;/em&gt; within just about any bit of code you have running, whether
+you wrote it or not.  In a fantastic bit of functionality, this capability is
+delivered as a &lt;em&gt;rule&lt;/em&gt; you can define along with the code you want to be 
+injected and executed at the point defined by the rule.  You get local access
+to variables and methods (if you know the names) so you can do detail logging
+or property modification.  As a bonus, Byteman works at a lower level than
+reflection, so you needn&amp;#8217;t worry about the public vs private nature of 
+class members.  While the obvious use is to inject logging and debugging
+statements to better observe a problem, Byteman can also be used to assert
+tests or conditions which are difficult (if not impossible) to reproduce in 
+a development environment.  For example, if the production environment has 
+a poorly handled runtime exception from time to time which cannot be 
+reproduced in any other environment, Byteman could be used on a developer&amp;#8217;s 
+workstation to inject the runtime exception at the exact point it is being
+thrown in the live environment and develop proper handling and application&amp;nbsp;recovery.  &lt;/p&gt;
+&lt;p&gt;Continuing to wax enthusiastic about Byteman, it has the ability to run as 
+an Agent on the &lt;span class="caps"&gt;JVM&lt;/span&gt; when passed as a command line parameter on startup, 
+allowing it to listen on a remote interface for live inspection of the 
+execution environment.  Rules submitted this way can be typechecked, so you
+can be fairly certain that they will not cause a runtime error when 
+encountered.  However, the important thing to note is that if you are using
+a very specific type, such as a particular kind of exception, be sure to
+use the fully qualified name so as to avoid unexpected results if the 
+application has defined a local type with the same name that is in scope
+of the executing rule, or in case the type is not already imported by the
+parent&amp;nbsp;class.&lt;/p&gt;
+&lt;h1&gt;Closing&amp;nbsp;Thoughts&lt;/h1&gt;
+&lt;p&gt;With runtime modification and injection, Java developers can get a taste of 
+&lt;span class="caps"&gt;4GL&lt;/span&gt; without leaving their cozy strongly typed 3rd generation&amp;nbsp;language.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Matt Dugan</dc:creator><pubDate>Tue, 25 Jun 2013 12:09:00 -0400</pubDate><guid>tag:,2013-06-25:posts/2013/Jun/25/judcon-2013-full-control-and-transparency</guid><category>JUDCon</category><category>Testing</category><category>Troubleshooting</category></item><item><title>CamelOne 2013: Making Apache Active MQ Scale</title><link>/posts/2013/Jun/18/camelone-2013-making-apache-mq-scale</link><description>&lt;p&gt;&lt;a href="http://hiramchirino.com/blog"&gt;Hiram Chirino&lt;/a&gt; is one of the authors of
+Apache &lt;span class="caps"&gt;MQ&lt;/span&gt;, so this should be&amp;nbsp;good.  &lt;/p&gt;
+&lt;p&gt;Apache &lt;span class="caps"&gt;MQ&lt;/span&gt; is designed for Machine to Machine, push-style messaging and
+enables vertical scaling through high performance as well as 
+horizontal scaling through clustering and partitioning.  Hiram gave
+a number of scaling tips for Apache &lt;span class="caps"&gt;MQ&lt;/span&gt;, which should mostly apply to
+&lt;a href="https://www.redhat.com/products/jbossenterprisemiddleware/fuse/"&gt;JBoss Fuse&lt;/a&gt;
+since Apache &lt;span class="caps"&gt;MQ&lt;/span&gt; is&amp;nbsp;embedded.&lt;/p&gt;
+&lt;h1&gt;Vertical&amp;nbsp;Scaling&lt;/h1&gt;
+&lt;p&gt;To start, vertical scaling, or allowing a single Apache &lt;span class="caps"&gt;MQ&lt;/span&gt; broker to
+serve more traffic than before, can be improved with a few&amp;nbsp;parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Set the configuration for using a dedicated task runner to&amp;nbsp;false.&lt;/li&gt;
+&lt;li&gt;Set the destination policy setting for optimizing dispatch to&amp;nbsp;true.&lt;/li&gt;
+&lt;li&gt;Use the &lt;span class="caps"&gt;NIO&lt;/span&gt; transport on the&amp;nbsp;broker&lt;/li&gt;
+&lt;li&gt;Reduce the thread size on the &lt;span class="caps"&gt;JVM&lt;/span&gt; via the Xss&amp;nbsp;option&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If using version 5.6 of Apache &lt;span class="caps"&gt;MQ&lt;/span&gt;, then non-blocking callbacks for 
+&lt;span class="caps"&gt;ACK&lt;/span&gt;-ing receipt of &lt;span class="caps"&gt;JMS&lt;/span&gt; messages are available which can improve 
+performance by incurring fewer thread&amp;nbsp;waits.  &lt;/p&gt;
+&lt;p&gt;If using version 5.8, a new backing store is available, called
+&lt;a href="https://github.com/fusesource/fuse-extra/tree/master/fusemq-leveldb"&gt;Level &lt;span class="caps"&gt;DB&lt;/span&gt;&lt;/a&gt;
+instead of &lt;a href="https://activemq.apache.org/kahadb.html"&gt;Kaha &lt;span class="caps"&gt;DB&lt;/span&gt;&lt;/a&gt; which
+offers higher performance in nearly all&amp;nbsp;cases.  &lt;/p&gt;
+&lt;h1&gt;Horizontal&amp;nbsp;Scaling&lt;/h1&gt;
+&lt;p&gt;Scaling &lt;em&gt;out&lt;/em&gt; is usally a little more tricky than scaling &lt;em&gt;up&lt;/em&gt;.  In
+Apache &lt;span class="caps"&gt;MQ&lt;/span&gt;, there are two primary methods for scaling out 
+horizontally in your messaging&amp;nbsp;architecture:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Use client side partitioning by having multiple brokers, each 
+   for a set of&amp;nbsp;clients.&lt;/li&gt;
+&lt;li&gt;Link brokers together in a cluster&amp;nbsp;configuration.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The second method is the out of box &amp;#8220;easy button&amp;#8221;, but it is
+important to note that it does &lt;span class="caps"&gt;NOT&lt;/span&gt; make Apache &lt;span class="caps"&gt;MQ&lt;/span&gt; &lt;em&gt;faster&lt;/em&gt;.  Instead,
+in some cases it is &lt;em&gt;slower&lt;/em&gt; because it may add a network hop
+between brokers to reach a particular connected client&amp;nbsp;path.&lt;/p&gt;
+&lt;p&gt;The first method is more difficult to configure and maintain as 
+clients scale out, so it is best used where the messaging topology
+matches with the broker partitioning scheme. This occurs when clients
+are naturally separated by geography or business purpose and 
+producers &lt;em&gt;know&lt;/em&gt; which client group should receive a particular
+message and can select the broker&amp;nbsp;accordingly.&lt;/p&gt;
+&lt;h1&gt;High&amp;nbsp;Availability&lt;/h1&gt;
+&lt;p&gt;Even with Horizontal Scaling practices, it is still possible to lose a
+broker and, particularly when using partioning, the associated set of
+clients.  This is where a High Availability configuration comes into 
+play - to allow clients to continue receiving messages when their
+primary broker&amp;nbsp;fails.&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;HA&lt;/span&gt; configurations often use a failover &lt;span class="caps"&gt;URI&lt;/span&gt; type, written as
+&lt;code&gt;failover://(address1,address2,...)&lt;/code&gt; but high availability can also
+be acheived by clustering at the database level (which is still a 
+single point of failure, only now at the &lt;span class="caps"&gt;DB&lt;/span&gt; instead of the message 
+broker).  Alternately shared filesystems can be used and, in the case
+of Apache &lt;span class="caps"&gt;MQ&lt;/span&gt; 5.9, a replicated Level &lt;span class="caps"&gt;DB&lt;/span&gt; using Zookeeper for automatic
+leader&amp;nbsp;election.&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://zookeeper.apache.org/"&gt;Zookeeper&lt;/a&gt; case is an interesting
+one, as it is also the officially supported tool embedded within
+&lt;a href="http://fusesource.com/products/fuse-fabric/"&gt;Fuse Fabric&lt;/a&gt; as the 
+service registry.  When a fabric &lt;span class="caps"&gt;URI&lt;/span&gt; is used, the client can dynamically
+discover and resolve slave instances of brokers from the&amp;nbsp;directory.&lt;/p&gt;
+&lt;p&gt;It is important to consider the system load when using Zookeeper, as
+Zookeeper does not respond well in cases of &lt;span class="caps"&gt;CPU&lt;/span&gt; contention and this 
+can impact leader election.  Keeping Zookeeper hosted separately from
+the Apache &lt;span class="caps"&gt;MQ&lt;/span&gt; broker helps with this, and you need at least 3 Zookeeper
+instances to achieve High Availability through Zookeeper, and at least
+5 to have high&amp;nbsp;reliability.&lt;/p&gt;
+&lt;h1&gt;Demo&amp;nbsp;Time&lt;/h1&gt;
+&lt;p&gt;Hiram made use of &lt;a href="http://tmux.sourceforge.net/"&gt;Tmux&lt;/a&gt; to automatically
+echo his commands across multiple terminals, live in front of the 
+audience.  This speeds up the demo quite a bit, looks awesome, and 
+lends credibility to him as a presenter for using a cool&amp;nbsp;tool.&lt;/p&gt;
+&lt;p&gt;The demo went well, showing brokers going down and the clients 
+recovering without losing&amp;nbsp;messages.  &lt;/p&gt;
+&lt;h1&gt;Closing&amp;nbsp;Thoughts&lt;/h1&gt;
+&lt;p&gt;A lot of features are new in the 5.9 version of Apache &lt;span class="caps"&gt;MQ&lt;/span&gt;, but won&amp;#8217;t
+make it into RedHat JBoss Fuse until early next year.&lt;br /&gt;
+RedHat JBoss Fuse sees Apache &lt;span class="caps"&gt;MQ&lt;/span&gt; as upstream code and takes some time
+to certify it for enterprise level&amp;nbsp;support.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Matt Dugan</dc:creator><pubDate>Tue, 18 Jun 2013 08:43:00 -0400</pubDate><guid>tag:,2013-06-18:posts/2013/Jun/18/camelone-2013-making-apache-mq-scale</guid><category>Camel</category><category>CamelOne</category><category>ApacheMQ</category><category>Fuse</category></item><item><title>CamelOne 2013: Drools with Apache Camel.. Rules</title><link>/posts/2013/Jun/17/camelone-2013-drools-apache-camel-rules</link><description>&lt;p&gt;Ah, the end of day Keynote, time to sit back and relax and
+enjoy some light presentation that doesn&amp;#8217;t require any 
+brain power at&amp;nbsp;all.&lt;/p&gt;
+&lt;p&gt;&amp;#8230; But it wasn&amp;#8217;t meant to be.  Mark Proctor was the presenter
+and when they guy talking to you looks like he can juggle
+a couple of Voltswagens, you had better&amp;nbsp;listen.&lt;/p&gt;
+&lt;h1&gt;jBPM, Drools, &lt;span class="caps"&gt;BRMS&lt;/span&gt;,&amp;nbsp;what?&lt;/h1&gt;
+&lt;p&gt;Coming from a background heavy in &lt;span class="caps"&gt;BPM&lt;/span&gt;, the confusion is 
+natural and isn&amp;#8217;t exclusive to the decision maker, the 
+implementer, or even the business user.  Each technology
+has certain merits and this session helped to clarify
+&lt;a href="https://www.jboss.org/drools/"&gt;Drools&lt;/a&gt;. Drools is not so 
+much a &amp;#8220;Business Rule&amp;#8221; engine as it is a &lt;em&gt;Hybrid Reasoning
+Engine&lt;/em&gt; supporting filters, logic, and chains.  Drools
+includes features for &lt;span class="caps"&gt;CEP&lt;/span&gt; (Complex Event Processing),
+Decision Tables for processing high numbers of rules and
+&lt;em&gt;Time Windowing&lt;/em&gt; - a powerful feature allowing you to 
+write logic for events that occur &amp;#8220;over the last 5 minutes&amp;#8221;
+or other relative time&amp;nbsp;periods.  &lt;/p&gt;
+&lt;p&gt;Next, we looked at &lt;span class="caps"&gt;BRMS&lt;/span&gt;, which packages Drools and jBPM 
+together along with a rule repository to achieve a very
+useful integration pattern.  Often, business users struggle
+with expressing a complete process (as opposed to merely
+a high-level process) in &lt;span class="caps"&gt;BPMN&lt;/span&gt;.  Eventually, the implementation
+starts to look like code, graphical or not.  Rules, on
+the other hand, &lt;em&gt;are&lt;/em&gt; code but do not easily work upward
+to describe an overall business process.  Putting the
+two together is a peanut-butter-on-chocolate approach
+designed to achieve common code patterns using Rule
+logic while expressing the transitions between rule chains
+and processes using &lt;span class="caps"&gt;BPMN&lt;/span&gt;.  This concept works surprisingly
+well and I have to commend the RedHat &lt;span class="caps"&gt;BRMS&lt;/span&gt; team for 
+thinking outside of the single-purpose tool package we see 
+from other&amp;nbsp;vendors.  &lt;/p&gt;
+&lt;p&gt;The upcoming release of &lt;span class="caps"&gt;BRMS&lt;/span&gt; embedding Drools 6 gains 
+the ability of JBoss Truth Management to enable handling
+of contraditions in the rule chain - for example a
+discount rule of 10% and a temporary discount of 20% are
+in conflict unless the contradiction can be managed to say
+that the 20% rate is valid over a particular time window
+and otherwise default to the 10% rule.  MultiCore processing
+additions in Drools 6 should provide a significant speedup
+in the next release of &lt;span class="caps"&gt;BRMS&lt;/span&gt; as&amp;nbsp;well.&lt;/p&gt;
+&lt;p&gt;The Drools 6 &lt;span class="caps"&gt;UI&lt;/span&gt; gets a much needed refresh to fix some 
+old nuances and adds resizable panels for getting work 
+done within the browser viewport.  The new &lt;span class="caps"&gt;UI&lt;/span&gt; is brought
+together with Errai &lt;em&gt;(see earlier post)&lt;/em&gt;.  Rule storage
+now has a &lt;span class="caps"&gt;GIT&lt;/span&gt; backend so rule authors can take advantage
+of the &lt;span class="caps"&gt;GIT&lt;/span&gt; workflow for publishing rules.  Finally, work
+has been performed to create a high availability scenario
+for the rules engine and everything is built together
+with maven.  Drools 6 introduces a new principal object
+extension point, &lt;span class="caps"&gt;KIE&lt;/span&gt;, for &amp;#8220;Knowledge is&amp;nbsp;Everything&amp;#8221;.&lt;/p&gt;
+&lt;p&gt;Mark closed out the presentation with a brief note on
+applying rules to situations you may not have thought of
+as a convenient answer.  Watch Mark write Pong, implemented
+in&amp;nbsp;Drools.  &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=Omj4PR3v-nI"&gt;https://www.youtube.com/watch?v=Omj4PR3v-nI&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;.. youtube::&amp;nbsp;Omj4PR3v-nI&lt;/p&gt;
+&lt;iframe width="640" height="480" src="//www.youtube.com/embed/Omj4PR3v-nI" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Matt Dugan</dc:creator><pubDate>Mon, 17 Jun 2013 14:32:00 -0400</pubDate><guid>tag:,2013-06-17:posts/2013/Jun/17/camelone-2013-drools-apache-camel-rules</guid><category>Camel</category><category>CamelOne</category><category>Drools</category><category>BRMS</category></item><item><title>JUDCon 2013: Rich Web Applications with JBoss Errai</title><link>/posts/2013/Jun/17/judcon-2013-rich-web-apps-with-jboss-errai</link><description>&lt;p&gt;I managed to check into my hotel and change shirts and still make the
+next session.  I had planned on attending a totally different 
+session but the JUDCon session on Errai was too tempting to&amp;nbsp;miss.&lt;/p&gt;
+&lt;h1&gt;Errai&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://www.jboss.org/errai"&gt;JBoss Errai&lt;/a&gt; is a full stack &lt;span class="caps"&gt;UI&lt;/span&gt;
+development framework that builds on &lt;a href="https://code.google.com/p/google-web-toolkit/"&gt;Google &lt;span class="caps"&gt;GWT&lt;/span&gt;&lt;/a&gt;
+to offer a single programming model for both the frontend and 
+application tier of a web application.  One of the goals of 
+the framework is to be entirely declarative and thereby avoid
+writing boilerplate wherever possible.  Errai uses &lt;span class="caps"&gt;JEE6&lt;/span&gt; APIs
+and makes special use of the &lt;span class="caps"&gt;CDI&lt;/span&gt; APIs for injecting models 
+and services and attempts to have unobtrusive&amp;nbsp;marshalling.&lt;/p&gt;
+&lt;p&gt;The structure of a JBoss Errai application is familiar looking
+and pretty well&amp;nbsp;organized:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;project_root&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+  &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+    &lt;span class="n"&gt;java&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+      &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gwt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xml&lt;/span&gt;
+      &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;/**&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Java&lt;/span&gt; &lt;span class="n"&gt;code&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;generate&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="n"&gt;shared&lt;/span&gt;&lt;span class="o"&gt;/**&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Java&lt;/span&gt; &lt;span class="n"&gt;code&lt;/span&gt; &lt;span class="n"&gt;common&lt;/span&gt; &lt;span class="n"&gt;between&lt;/span&gt; &lt;span class="n"&gt;client&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;/**&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Java&lt;/span&gt; &lt;span class="n"&gt;code&lt;/span&gt; &lt;span class="n"&gt;specific&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="n"&gt;side&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;webapp&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+      &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;
+      &lt;span class="n"&gt;&lt;span class="caps"&gt;WEB&lt;/span&gt;&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;&lt;span class="caps"&gt;INF&lt;/span&gt;&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;web&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xml&lt;/span&gt;
+    &lt;span class="n"&gt;resources&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+      &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;_App&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;properties&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;An interesting feature is the notion of a single-model for 
+transferring of structured objects between the server and 
+browser client.  Errai uses an annotation to mark this kind
+of object as &lt;code&gt;@Portable&lt;/code&gt;.  Doing so, data flow can be 
+bi-directional between the server and the client, as data
+changes on the server can be automatically replicated to the
+client via the available WebSockets connection and likewise
+for data changes made by the client when reflected back to
+the server.  Errai also supports polling, long polling and
+messaging.  Naturally, &lt;span class="caps"&gt;JAX&lt;/span&gt;-&lt;span class="caps"&gt;RS&lt;/span&gt; functionality is available 
+for writing more specific operational services.  &lt;span class="caps"&gt;RPC&lt;/span&gt; like 
+functionality is enabled since writing in the single Java
+language domain means that business methods can be invoked
+directly by Java code in the &lt;code&gt;src/main/java/client/&lt;/code&gt; tree,
+and Errai sorts it out at code-generation&amp;nbsp;time.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(Aside: I just noticed that putting on my glasses is like
+going from &lt;span class="caps"&gt;DVD&lt;/span&gt; to BluRay. So &lt;em&gt;that&amp;#8217;s&lt;/em&gt; what it says on the
+bottom of the&amp;nbsp;slide!)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The power of the single-language-domain model is evident
+(inspired by other single-language models, like Meteor &lt;span class="caps"&gt;JS&lt;/span&gt;)
+as suddenly the client can use things like &lt;span class="caps"&gt;JPA&lt;/span&gt; in the 
+&lt;em&gt;browser&lt;/em&gt;.  Now of course, this is not &amp;#8220;true&amp;#8221; &lt;span class="caps"&gt;JPA&lt;/span&gt; but 
+feels like &lt;span class="caps"&gt;JPA&lt;/span&gt; when you are writing the code in a language
+like Java, but actually dealing with browser features like
+the local-storage&amp;nbsp;APIs.&lt;/p&gt;
+&lt;p&gt;Errai uses templates to define the markup to render &lt;span class="caps"&gt;UI&lt;/span&gt; parts
+of an application or objects.  Using the &lt;code&gt;data-&lt;/code&gt; prefix 
+for attributes, which are valid to the &lt;span class="caps"&gt;HTML5&lt;/span&gt; specification,
+Errai provides the metadata required for the 2-way data
+binding.  Note that this binding can only be performed on
+objects marked &lt;code&gt;@Portable&lt;/code&gt; as non-&lt;code&gt;@Portable&lt;/code&gt; objects are
+local to the origin language and will not have a JavaScript
+translation. Type inference is performed when data is 
+migrated back and forth, for example between input and 
+textarea with the String type, or with Integers and errors
+are reported where types cannot be&amp;nbsp;translated.&lt;/p&gt;
+&lt;p&gt;In keeping with the overall move to WebSockets where the
+browser is a first class citizen, Errai exposes notifications
+corresponding to events which occur in the data model 
+(where &lt;code&gt;@Portable&lt;/code&gt; is applied).  Naturally both the client
+and server must support WebSockets, such as with a modern
+web browser and an application server such as Tomcat 7.0.28
+or WildFly.  Beyond just data model events, Errai can 
+receive and respond to &lt;em&gt;&lt;span class="caps"&gt;DOM&lt;/span&gt; Events&lt;/em&gt;.  This is a game
+changing feature for Java web application development as the 
+server can be a first class participant in the handling of
+specific &lt;span class="caps"&gt;DOM&lt;/span&gt; events and take part in managing the viewport
+of the&amp;nbsp;client.  &lt;/p&gt;
+&lt;p&gt;Security features in the framework are in progress, but 
+for now the &lt;a href="https://www.jboss.org/picketlink"&gt;JBoss PicketLink&lt;/a&gt;
+looks like a good&amp;nbsp;option.  &lt;/p&gt;
+&lt;h1&gt;Closing&amp;nbsp;Thoughts&lt;/h1&gt;
+&lt;p&gt;I have to say, I came in expecting to heckle but came out
+very pleasantly surprised.  I&amp;#8217;ll be using Errai for the next
+Java based &lt;span class="caps"&gt;UI&lt;/span&gt; that I put&amp;nbsp;together.&lt;/p&gt;
+&lt;p&gt;Check out &lt;a href="https://github.com/errai/errai"&gt;Errai on GitHub&lt;/a&gt; and dive&amp;nbsp;in.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Matt Dugan</dc:creator><pubDate>Mon, 17 Jun 2013 13:19:00 -0400</pubDate><guid>tag:,2013-06-17:posts/2013/Jun/17/judcon-2013-rich-web-apps-with-jboss-errai</guid><category>JBoss</category><category>Errai</category><category>UI</category><category>GWT</category><category>JUDCon</category></item><item><title>JUDCon 2013: JBoss Data Grid and WebSockets</title><link>/posts/2013/Jun/17/judcon-2013-real-time-push-message-scaling</link><description>&lt;h1&gt;Delivering Real Time Push at&amp;nbsp;Scale&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;(Keeping an eye on the &lt;a href="https://developer.apple.com/wwdc/"&gt;&lt;span class="caps"&gt;WWDC&lt;/span&gt;&lt;/a&gt;&amp;nbsp;announcements)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;#8217;s good to see a Linux &lt;span class="caps"&gt;OS&lt;/span&gt; doing the presenting, though it 
+looks like Ubuntu, not &lt;span class="caps"&gt;RHEL&lt;/span&gt;?  Oh I see, hah! it&amp;#8217;s just a virtual&amp;nbsp;machine.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://blog.c2b2.co.uk"&gt;Mark Addy&lt;/a&gt; started the presentation by 
+covering why we need to look at websockets and data grid solutions 
+in general.  After all, if what we have today must already work, 
+why do anything different?  The good news is, we can improve quite 
+a bit.  Existing mechanisms for delivering (or simulating) real time 
+data updates between a server and browser with &lt;span class="caps"&gt;HTTP&lt;/span&gt; are inherently
+limited.  &lt;span class="caps"&gt;HTTP&lt;/span&gt; is a request-reply protocol, which means it is 
+a half-duplex connection, like using a walkie-talkie pair for
+each connection open between the client and server.  Worse, only
+the client can initiate the connection.  In our use case here,
+the client is the browser.  Comet Cursor techniques, like polling
+or even long-polling doesn&amp;#8217;t cut it for high concurrency or 
+high frequency updates.  Streaming over &lt;span class="caps"&gt;HTTP&lt;/span&gt; 1.1 connections is
+not (as) memory&amp;nbsp;efficient.&lt;/p&gt;
+&lt;h1&gt;Enter&amp;nbsp;WebSockets&lt;/h1&gt;
+&lt;p&gt;WebSockets are available in &lt;span class="caps"&gt;HTML5&lt;/span&gt; compliant browsers, described
+by &lt;a href="https://www.rfc-editor.org/rfc/rfc6455.txt"&gt;&lt;span class="caps"&gt;RFC&lt;/span&gt; 6455&lt;/a&gt; and in
+&lt;span class="caps"&gt;JEE7&lt;/span&gt; described by &lt;a href="http://jcp.org/aboutJava/communityprocess/final/jsr356/index.html"&gt;&lt;span class="caps"&gt;JSR&lt;/span&gt; 356&lt;/a&gt;.
+WebSockets provide a protocol upgrade path from traditional 
+&lt;span class="caps"&gt;HTTP&lt;/span&gt;, support full duplex communication (bidirectional
+and simultaneous), support path parameters (&lt;em&gt;can you say: 
+RESTful WebSockets?&lt;/em&gt;) and use only 2 bytes overhead per&amp;nbsp;frame.&lt;/p&gt;
+&lt;h1&gt;JBoss Data&amp;nbsp;Grid&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://www.redhat.com/products/jbossenterprisemiddleware/data-grid/"&gt;JBoss Data Grid&lt;/a&gt;
+is essentially a caching framework which includes data replication
+and (re) distribution functionality.  This means that the sum of the 
+data included in a JBoss Data Grid cache is equivalent to the number
+of elements in the cache multiplied by the number of nodes and divided
+by the number of copies of the data between nodes.  Redundancy is 
+automatic with even data&amp;nbsp;distribution.&lt;/p&gt;
+&lt;p&gt;For applications, a great feature of Data Grid is that as a
+developer, you need not remember which node received data to retrieve 
+it back again later.  The data grid will note the location of each 
+entry and automatically retrieve it from any other node as necessary
+when requested by an application.  Another is the support for &lt;em&gt;Cache
+Events&lt;/em&gt;.  Listening to cache events allows and application to take
+advice from the cache when elements are changed or written.  For
+example, in a dashboard if the source data aggregate changes in 
+response to a recurring map-reduce job, data could be made available
+to dashboard listeners by issuing a push or pull request after
+receiving an event notification that the data had changed in the&amp;nbsp;cache.&lt;/p&gt;
+&lt;p&gt;Currently, JBoss Data Grid can only be used in an embedded mode, as
+a java library in an application.  Soon multiple modes will be supported,
+such as a client-server mode.  If you are using the new 8.0.0
+&lt;a href="http://wildfly.org"&gt;WildFly&lt;/a&gt; application server then you can use 
+library mode with JBoss Data Grid right&amp;nbsp;away.&lt;/p&gt;
+&lt;h1&gt;Optimizing&amp;nbsp;Events&lt;/h1&gt;
+&lt;p&gt;Since multiple copies of data can exist in a distributed cache,
+multiple events occur whenever data is updated as copies are refreshed.
+An application most likely does not want to receive the additional
+events and almost surely does not want to propogate a data refresh to
+a WebSocket client connection if the data has not actually changed from
+the first event received.  To resolve this, JBoss application servers
+including HornetQ can enable the &lt;em&gt;de-duplication&lt;/em&gt; feature on a &lt;span class="caps"&gt;JMS&lt;/span&gt;
+Topic, resulting in an automatic purging of the duplicate cache
+events as they are published to the&amp;nbsp;topic.  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;WebSocket&lt;/span&gt; &lt;span class="n"&gt;Clients&lt;/span&gt; &lt;span class="p"&gt;............&lt;/span&gt;   &lt;span class="o"&gt;*&lt;/span&gt;
+          &lt;span class="o"&gt;/|&lt;/span&gt;\
+           &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;WebSocket&lt;/span&gt; &lt;span class="n"&gt;Protocol&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+          &lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="o"&gt;|/&lt;/span&gt;
+&lt;span class="n"&gt;Application&lt;/span&gt; &lt;span class="n"&gt;Message&lt;/span&gt; &lt;span class="n"&gt;Driven&lt;/span&gt; &lt;span class="n"&gt;Beans&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;ServerEndpoint&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+          &lt;span class="o"&gt;/|&lt;/span&gt;\
+           &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;&lt;span class="caps"&gt;JMS&lt;/span&gt;&lt;/span&gt; &lt;span class="n"&gt;via&lt;/span&gt; &lt;span class="n"&gt;Subscription&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+           &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="n"&gt;HornetQ&lt;/span&gt; &lt;span class="n"&gt;Topic&lt;/span&gt; &lt;span class="n"&gt;Publisher&lt;/span&gt;
+  &lt;span class="o"&gt;/|&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;     &lt;span class="o"&gt;/|&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;    &lt;span class="o"&gt;/|&lt;/span&gt;\
+   &lt;span class="o"&gt;|&lt;/span&gt;       &lt;span class="o"&gt;|&lt;/span&gt;      &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Data&lt;/span&gt; &lt;span class="n"&gt;Grid&lt;/span&gt; &lt;span class="n"&gt;Cache&lt;/span&gt; &lt;span class="n"&gt;Events&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="o"&gt;|&lt;/span&gt;       &lt;span class="o"&gt;|&lt;/span&gt;      &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="n"&gt;JBoss&lt;/span&gt; &lt;span class="n"&gt;Data&lt;/span&gt; &lt;span class="n"&gt;Grid&lt;/span&gt; &lt;span class="n"&gt;Layer&lt;/span&gt;
+   &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="p"&gt;..........&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Data&lt;/span&gt; &lt;span class="n"&gt;Grid&lt;/span&gt; &lt;span class="n"&gt;Nodes&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;em&gt;(&lt;span class="caps"&gt;WWDC&lt;/span&gt; Update: New MacBook Air with Haswell and a new&amp;nbsp;MacPro!)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Matt Dugan</dc:creator><pubDate>Mon, 17 Jun 2013 09:16:00 -0400</pubDate><guid>tag:,2013-06-17:posts/2013/Jun/17/judcon-2013-real-time-push-message-scaling</guid><category>JUDCon</category><category>JBoss</category><category>WebSockets</category><category>Grid</category></item><item><title>CamelOne 2013: Camel Cookbook</title><link>/posts/2013/Jun/17/camelone-2013-camel-cookbook</link><description>&lt;p&gt;Unfortunately by the time my flight landed and I took the bus and
+two subways to the Hynes Convention Center in Boston, &lt;span class="caps"&gt;MA&lt;/span&gt;, got
+registered, issued a badge and had my bearings &amp;#8212; the Camel
+Cookbook session was full and overflowing. Scott Cranton must
+be in top&amp;nbsp;form.&lt;/p&gt;
+&lt;p&gt;Oh well, great time for a coffee and a chance to familiarize
+myself with the conference session layout before camping out 
+in front of the upcoming JUDCon session on JBoss Grid and&amp;nbsp;WebSockets.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Matt Dugan</dc:creator><pubDate>Mon, 17 Jun 2013 09:11:00 -0400</pubDate><guid>tag:,2013-06-17:posts/2013/Jun/17/camelone-2013-camel-cookbook</guid><category>Camel</category><category>CamelOne</category></item></channel></rss>
