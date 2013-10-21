@@ -59,6 +59,12 @@ DISPLAY_CATEGORIES_ON_MENU = True
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = False
 
+DELETE_OUTPUT_DIRECTORY = False
+OUTPUT_SOURCES = False
+STATIC_PATHS = ['content/images', 'content/dwd']
+OUTPUT_RETENTION = ('.git', '.gitignore')
+OUTPUT_PATH = '../output/'
+
 # Theme variables
 MAIL = 'matt@intelligentgeek.com'
 TWITTER_USER = 'dugansvoice'
@@ -69,7 +75,7 @@ ABOUT_TEXT = """
     Lead Middleware and Cloud Architect<br/>
     Technology Evangelist
     """
-ABOUT_IMAGE = 'images/profile_photo2.png'
+ABOUT_IMAGE = 'content/images/profile_photo2.png'
 ABOUT_LINK = 'http://mattdugan.github.io'
 COPYRIGHT = 'Matt Dugan'
 SHOW_COPYRIGHT = True
