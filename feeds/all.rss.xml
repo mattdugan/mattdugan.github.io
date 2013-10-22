@@ -24,7 +24,81 @@ up and used,&amp;nbsp;live:&lt;/p&gt;
 &lt;p&gt;If you enjoyed the above, stay tuned for more Deep with Dugan special&amp;nbsp;episodes!&lt;/p&gt;
 &lt;p&gt;Also, don’t forget, we are live this week at the All Things Open conference
 (www.allthingsopen.org) where I will be giving a talk, “In Defense of Vendor
-Mistrust”.  Don’t miss&amp;nbsp;it!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Matt Dugan</dc:creator><pubDate>Fri, 18 Oct 2013 16:02:00 -0400</pubDate><guid>tag:,2013-10-18:posts/2013/Oct/18/using-redhat-software-collections</guid><category>Red Hat</category><category>Software Collections</category><category>Python</category></item><item><title>Atlanta JBUG: JBoss A-MQ is the hotness</title><link>/posts/2013/Aug/30/atl-jbug-jboss-amq-is-the-hotness</link><description>&lt;p&gt;Just before Labor Day weekend, Hiram Chirino came down to our Atlanta JBoss Users Group.  We had a large local turnout interested to know more about JBoss A-&lt;span class="caps"&gt;MQ&lt;/span&gt; and the features coming from Apache Active &lt;span class="caps"&gt;MQ&lt;/span&gt; upstream.  An accomplished engineer, Hiram is employed by Red Hat but is also an Apache member and ActiveMQ &lt;span class="caps"&gt;PMC&lt;/span&gt; chair.  Between committing to Apache ActiveMQ, Camel, Karaf, ServiceMix, Felix and Aries, Hiram leads the development of the &lt;span class="caps"&gt;STOMP&lt;/span&gt; 1.1 specification.  All those things in mind, it was our pleasure at Shadow-Soft to continue our tradition of hosting the recurring Atlanta &lt;span class="caps"&gt;JBUG&lt;/span&gt; meetup with a presenter that knows what he is talking&amp;nbsp;about.&lt;/p&gt;
+Mistrust”.  Don’t miss&amp;nbsp;it!&lt;/p&gt;
+&lt;h1&gt;Video Transcript and&amp;nbsp;Resources:&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;DwD:&amp;nbsp;E-001&lt;/p&gt;
+&lt;p&gt;Hi, welcome to Deep with Dugan, Episode One, brought to you by Matt Dugan, Lead
+Middleware and Cloud Architect at Shadow Soft - the Open Source Systems
+Integration&amp;nbsp;Experts.&lt;/p&gt;
+&lt;p&gt;The first obstacle many people encounter when using Red Hat Enterprise Linux as
+their enterprise development platform is the apparent lack of the modern
+languages and tools they are accustomed to using.  For example, Python 3, &lt;span class="caps"&gt;PHP&lt;/span&gt;
+5, or Ruby on Rails or even the 5.2 release of&amp;nbsp;PostgreSQL.&lt;/p&gt;
+&lt;p&gt;Luckily, using the recently released Red Hat Software Collections, we can
+include these packages without disturbing the stable collection of software
+already on the&amp;nbsp;machine.&lt;/p&gt;
+&lt;p&gt;Let&amp;#8217;s dive in.  First, we need to enable Red Hat Software Collections in our
+subscription.  Because they are delivered via a Yum repository, we can easily
+do this from the Software Manager&amp;nbsp;tool.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;enable &lt;span class="caps"&gt;RHSCL&lt;/span&gt;-6-&lt;span class="caps"&gt;RPMS&lt;/span&gt; repository using the software&amp;nbsp;manager&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now, let&amp;#8217;s see what we have&amp;nbsp;available.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;yum&lt;/span&gt; &lt;span class="n"&gt;repolist&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And now we can find out what new software we can choose from by just showing
+what comes from the Red Hat Software Collections&amp;nbsp;repository:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;yum&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;available&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;egrep&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="p"&gt;].&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rhscl&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;sort&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;less&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Great, now I like Python, so I&amp;#8217;ll install Python 3.3 for my modern&amp;nbsp;app.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;yum&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python33&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now, every modern app needs a progress spinner, so let&amp;#8217;s write one using some
+of the features of Python&amp;nbsp;3&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/bin/env python&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="nn"&gt;itertools&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;progress&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;itertools&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cycle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;|/-&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\r&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Check out this nifty spinner!&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;progress&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Done! Now we can see this does not work with the system python, so we can use
+the Software Collections command to switch our environment to the new&amp;nbsp;packages.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;scl&lt;/span&gt; &lt;span class="n"&gt;enable&lt;/span&gt; &lt;span class="n"&gt;python33&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="n"&gt;modernapp&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Cool&amp;nbsp;huh?&lt;/p&gt;
+&lt;p&gt;Join me next time on Deep with Dugan, and come visit me and others from
+Shadow-Soft at the All Things Open conference in Raleigh &lt;span class="caps"&gt;NC&lt;/span&gt; next week from
+October 23rd to&amp;nbsp;25th.&lt;/p&gt;
+&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Matt Dugan</dc:creator><pubDate>Fri, 18 Oct 2013 16:02:00 -0400</pubDate><guid>tag:,2013-10-18:posts/2013/Oct/18/using-redhat-software-collections</guid><category>Red Hat</category><category>Software Collections</category><category>Python</category></item><item><title>Atlanta JBUG: JBoss A-MQ is the hotness</title><link>/posts/2013/Aug/30/atl-jbug-jboss-amq-is-the-hotness</link><description>&lt;p&gt;Just before Labor Day weekend, Hiram Chirino came down to our Atlanta JBoss Users Group.  We had a large local turnout interested to know more about JBoss A-&lt;span class="caps"&gt;MQ&lt;/span&gt; and the features coming from Apache Active &lt;span class="caps"&gt;MQ&lt;/span&gt; upstream.  An accomplished engineer, Hiram is employed by Red Hat but is also an Apache member and ActiveMQ &lt;span class="caps"&gt;PMC&lt;/span&gt; chair.  Between committing to Apache ActiveMQ, Camel, Karaf, ServiceMix, Felix and Aries, Hiram leads the development of the &lt;span class="caps"&gt;STOMP&lt;/span&gt; 1.1 specification.  All those things in mind, it was our pleasure at Shadow-Soft to continue our tradition of hosting the recurring Atlanta &lt;span class="caps"&gt;JBUG&lt;/span&gt; meetup with a presenter that knows what he is talking&amp;nbsp;about.&lt;/p&gt;
 &lt;h1&gt;Messaging Oriented&amp;nbsp;Middleware&lt;/h1&gt;
 &lt;p&gt;JBoss A-&lt;span class="caps"&gt;MQ&lt;/span&gt; is an example of Messaging oriented Middleware (or MoM), which
 essentially means that JBoss A-&lt;span class="caps"&gt;MQ&lt;/span&gt; offers messaging APIs and facilities to
